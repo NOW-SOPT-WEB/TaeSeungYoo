@@ -1,0 +1,16 @@
+footer.footer {
+  width: 100%;
+  height: 10rem;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+
+  padding: 2rem;
+}
+
+.footer > div {
+  font-size: 1.2rem;
+  color: silver;
+}

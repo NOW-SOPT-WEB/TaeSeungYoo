@@ -1,0 +1,11 @@
+main.main {
+  flex-grow: 1;
+  padding: 0 2rem 2rem 2rem;
+}
+
+#study-all,
+#study-common,
+#study-web,
+#study-server {
+  height: 6rem;
+}

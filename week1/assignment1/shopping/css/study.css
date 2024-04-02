@@ -1,0 +1,37 @@
+section.study-section {
+}
+
+h2.study-section__title {
+  font-size: 2rem;
+}
+
+div.study-section__container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+article.study {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+article.study .study__image {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+}
+
+article.study .study__title {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+article.study .study__part,
+article.study .study__recruit {
+  font-size: 1.2rem;
+}

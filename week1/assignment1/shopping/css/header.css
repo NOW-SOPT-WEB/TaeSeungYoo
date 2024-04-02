@@ -1,0 +1,27 @@
+header.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
+  background-color: white;
+  padding: 1rem;
+  z-index: 10;
+}
+header.header > div {
+  display: flex;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+}
+
+div.header__title {
+  justify-content: center;
+}
+div.header__title > h1 {
+  font-size: 3rem;
+}
+div.header__right {
+  justify-content: flex-end;
+}
