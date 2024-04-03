@@ -18,11 +18,13 @@ article.study {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  transition: 1s box-shadow;
 }
 
 article.study .study__image {
-  width: 25rem;
-  height: 25rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
@@ -39,4 +41,8 @@ article.study .study__price {
 
 article.study .study__like {
   cursor: pointer;
+  font-variation-settings: "FILL" 1;
+}
+article.study .study__like:hover {
+  color: #ff9494;
 }
