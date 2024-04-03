@@ -9,15 +9,15 @@ div.study-section__container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 article.study {
   width: 25rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
 article.study .study__image {
@@ -32,6 +32,11 @@ article.study .study__title {
 }
 
 article.study .study__part,
-article.study .study__recruit {
+article.study .study__price {
   font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+article.study .study__like {
+  cursor: pointer;
 }

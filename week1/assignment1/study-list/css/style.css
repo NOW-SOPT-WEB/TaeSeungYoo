@@ -4,6 +4,13 @@
 @import "main.css";
 @import "study.css";
 
+:root {
+  --primary01: #eeeeee;
+  --primary02: #eeeeee;
+  --primary03: #eeeeee;
+  --primary04: #eeeeee;
+}
+
 * {
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -15,6 +22,7 @@ html,
 body {
   scroll-behavior: smooth;
   font-size: 62.5%;
+  background-color: var(--primary02);
 }
 
 html {
@@ -42,5 +50,5 @@ a {
 
 div.main-container {
   display: flex;
-  margin-top: 6rem;
+  margin: 10rem 2rem 0 2rem;
 }
