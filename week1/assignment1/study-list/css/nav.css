@@ -6,6 +6,8 @@ nav.nav {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: white;
+  border-radius: 1rem;
 
   position: sticky;
   top: 11rem;
@@ -36,6 +38,7 @@ nav.nav {
 
 .nav li.nav__item:hover {
   background-color: #ff9494;
+  color: white;
   transition: 0.2s;
 }
 

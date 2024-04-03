@@ -13,19 +13,29 @@ div.study-section__container {
 }
 
 article.study {
-  width: 25rem;
+  width: 26rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  padding: 2rem 0;
+  position: relative;
+  background-color: white;
+  border-radius: 3rem;
   transition: 1s box-shadow;
 }
 
+article.study:hover {
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
 article.study .study__image {
-  width: 100%;
+  width: 22rem;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 1rem;
 }
 
 article.study .study__title {
@@ -45,4 +55,14 @@ article.study .study__like {
 }
 article.study .study__like:hover {
   color: #ff9494;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
 }
