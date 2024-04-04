@@ -3,6 +3,7 @@
 @import "nav.css";
 @import "main.css";
 @import "study.css";
+@import "banner.css";
 
 :root {
   --primary01: #eeeeee;
@@ -16,6 +17,7 @@
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  box-sizing: border-box;
 }
 
 html,
@@ -50,5 +52,5 @@ a {
 
 div.main-container {
   display: flex;
-  margin: 10rem 2rem 0 2rem;
+  margin: 10rem 3rem 0 5rem;
 }
