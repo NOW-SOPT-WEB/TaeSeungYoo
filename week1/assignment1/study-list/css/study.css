@@ -70,7 +70,7 @@ article.study .study__like:hover {
   }
 }
 
-@media (max-width: 1016px) {
+@media (max-width: 1106px) {
   article.study {
     width: 47%;
     min-width: 26rem;
