@@ -1,17 +1,16 @@
 section.banner {
-  max-width: 100%;
   display: flex;
-  overflow-x: hidden;
-
   margin: 2rem 10rem 0 5%;
   padding-right: 5rem;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 div.banner__images {
+  gap: 2rem;
   max-width: 100%;
   white-space: nowrap;
   animation: scrollBanner 20s linear infinite;
-  gap: 2rem;
 }
 
 .banner img.banner__image {
@@ -30,8 +29,8 @@ div.banner__images {
 
 @media (max-width: 1016px) {
   .banner img.banner__image {
+    display: inline-block;
     width: 10rem;
     aspect-ratio: 1 / 1;
-    display: inline-block;
   }
 }

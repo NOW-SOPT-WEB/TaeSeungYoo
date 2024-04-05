@@ -10,9 +10,9 @@
 
 html,
 body {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
   background-color: $BgWhite;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -30,8 +30,8 @@ html {
 }
 
 ul {
-  list-style-type: none;
   padding: 0;
+  list-style-type: none;
 }
 
 a {

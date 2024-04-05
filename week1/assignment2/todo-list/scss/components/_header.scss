@@ -7,20 +7,20 @@ header.header {
   @include mixins.flex(column);
 
   & > h1.header__title {
-    font-size: 3.6rem;
     font-family: "Moirai One", system-ui;
+    font-size: 3.6rem;
   }
   & > section.header__search-bar {
     position: relative;
 
     & > input.search-bar__input {
+      padding: 0 6.4rem 0 3rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
       width: 56rem;
       height: 5rem;
-      border-radius: 2.2rem;
-      padding: 0 6.4rem 0 3rem;
       font-size: 1.8rem;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
       transition: 0.3s;
+      border-radius: 2.2rem;
 
       &:focus {
         box-shadow: rgba(255, 137, 137, 0.35) 0px 4px 15px;
@@ -28,17 +28,17 @@ header.header {
     }
 
     & > button.search-bar__button {
-      width: 6.4rem;
-      height: 5rem;
       padding: 0 1rem;
-      @include mixins.flex();
+      border: none;
       position: absolute;
       top: 0;
       right: 0;
-      border: none;
+      width: 6.4rem;
+      height: 5rem;
       background-color: $White;
-      border-radius: 2.2rem;
       cursor: pointer;
+      border-radius: 2.2rem;
+      @include mixins.flex();
 
       & > span {
         font-weight: 600;

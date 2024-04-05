@@ -1,6 +1,6 @@
 section.study-section {
-  width: 100%;
   padding-left: 5%;
+  width: 100%;
 }
 
 h2.study-section__title {
@@ -8,14 +8,13 @@ h2.study-section__title {
 }
 
 div.study-section__list {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  width: 100%;
 }
 
 article.study {
-  width: 26rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,9 +22,10 @@ article.study {
 
   padding: 2rem;
   position: relative;
+  width: 26rem;
   background-color: white;
-  border-radius: 3rem;
   transition: 1s box-shadow;
+  border-radius: 3rem;
 }
 
 article.study:hover {
@@ -41,14 +41,14 @@ article.study .study__image {
 }
 
 article.study .study__title {
-  font-size: 1.6rem;
   margin: 1rem 0;
+  font-size: 1.6rem;
 }
 
 article.study .study__part,
 article.study .study__price {
-  font-size: 1.2rem;
   margin-bottom: 0.3rem;
+  font-size: 1.2rem;
 }
 
 article.study .study__like {
