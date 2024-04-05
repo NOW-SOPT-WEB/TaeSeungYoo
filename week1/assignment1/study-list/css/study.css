@@ -4,7 +4,8 @@ section.study-section {
 }
 
 h2.study-section__title {
-  font-size: 2rem;
+  font-size: 2.4rem;
+  padding-left: 2rem;
 }
 
 div.study-section__list {
