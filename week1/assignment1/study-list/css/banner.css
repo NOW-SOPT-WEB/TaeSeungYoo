@@ -1,16 +1,14 @@
 section.banner {
   display: flex;
-  margin: 2rem 10rem 0 5%;
-  padding-right: 5rem;
+  margin-top: 2rem;
   overflow-x: hidden;
-  max-width: 100%;
 }
 
-div.banner__images {
-  gap: 2rem;
-  max-width: 100%;
-  white-space: nowrap;
-  animation: scrollBanner 20s linear infinite;
+ul.banner__images {
+  display: flex;
+  padding: 0;
+  gap: 1rem;
+  animation: scrollBanner 15s linear infinite;
 }
 
 .banner img.banner__image {
