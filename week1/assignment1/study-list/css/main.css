@@ -1,0 +1,12 @@
+main.main {
+  padding-bottom: 9rem;
+  padding-left: 2rem;
+  width: 85%;
+}
+
+#study-all,
+#study-common,
+#study-web,
+#study-server {
+  height: 9rem;
+}
