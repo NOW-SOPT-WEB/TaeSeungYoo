@@ -1,10 +1,13 @@
 import { STUDY_LIST, PART_NAME, FILTER_NAME } from "./constants.js";
 
 const studySection = document.querySelector(".study-section");
-
+const navItems = document.querySelectorAll(".nav__item");
 let selectPart = null; // all, common, web, server
 
 const renderStudyList = () => {
+  while (studySection.firstChild) {
+    studySection.removeChild(studySection.firstChild);
+  }
   const h2 = document.createElement("h2");
   h2.textContent = selectPart ? FILTER_NAME[selectPart] : "전체";
   h2.className = "study-section__title";
@@ -54,4 +57,25 @@ const renderStudyList = () => {
   });
 };
 
-renderStudyList();
+const handleClickNav = (event) => {
+  const select = event.target.textContent;
+  if (select === "전체") {
+    selectPart = "all";
+  } else if (select === "공통") {
+    selectPart = "common";
+  } else if (select === "웹파트") {
+    selectPart = "web";
+  } else if (select === "서버파트") {
+    selectPart = "server";
+  }
+  renderStudyList();
+};
+
+const init = () => {
+  navItems.forEach((item) => {
+    item.addEventListener("click", handleClickNav);
+  });
+  renderStudyList();
+};
+
+init();
