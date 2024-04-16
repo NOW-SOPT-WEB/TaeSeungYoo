@@ -20,6 +20,7 @@ header.header > div {
 
 div.header__title {
   justify-content: center;
+  min-width: 17rem;
 }
 
 div.header__title > h1 {
