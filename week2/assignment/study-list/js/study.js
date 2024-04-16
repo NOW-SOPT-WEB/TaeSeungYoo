@@ -4,6 +4,17 @@ const studySection = document.querySelector(".study-section");
 const navItems = document.querySelectorAll(".nav__item");
 let selectPart = null; // all, common, web, server
 
+const handleClickStudy = (study) => {
+  const { id, title, image_url, part, price } = study;
+  const studyObj = JSON.stringify({
+    title,
+    image_url,
+    part,
+    price,
+  });
+  localStorage.setItem(id, studyObj);
+};
+
 const renderStudyList = () => {
   while (studySection.firstChild) {
     studySection.removeChild(studySection.firstChild);
@@ -49,6 +60,12 @@ const renderStudyList = () => {
       article.appendChild(part);
       article.appendChild(price);
       article.appendChild(icon);
+
+      article.addEventListener("click", () => {
+        if (confirm(`${study.title}를(을) 장바구니에 담으시겠어요?`)) {
+          handleClickStudy(study);
+        }
+      });
 
       li.appendChild(article);
       ul.appendChild(li);
