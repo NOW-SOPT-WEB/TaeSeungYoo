@@ -10,19 +10,22 @@ header.header {
   height: 10rem;
   background-color: #eeeeee;
 }
+
 header.header > div {
   display: flex;
   align-items: center;
-  width: 33%;
+  width: 33.33%;
   height: 100%;
 }
 
 div.header__title {
   justify-content: center;
 }
+
 div.header__title > h1 {
   font-size: 3rem;
 }
+
 div.header__right {
   justify-content: flex-end;
 }

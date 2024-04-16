@@ -6,11 +6,22 @@
 @import "banner.css";
 
 * {
-  font-family: "Pretendard Variable", Pretendard, -apple-system,
-    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
-    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  box-sizing: border-box;
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
 }
 
 html,
@@ -31,7 +42,7 @@ html {
 *::after {
   -webkit-box-sizing: inherit;
   -moz-box-sizing: inherit;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 ul {
@@ -44,6 +55,7 @@ a {
 }
 
 div.main-container {
+  width: 100%;
   display: flex;
-  margin: 10rem 3rem 0 5rem;
+  margin-top: 10rem;
 }

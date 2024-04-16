@@ -1,6 +1,7 @@
 section.banner {
   display: flex;
   margin-top: 2rem;
+  margin-right: 4rem;
   overflow-x: hidden;
 }
 
@@ -12,7 +13,7 @@ ul.banner__images {
 }
 
 .banner img.banner__image {
-  max-width: 15rem;
+  width: 15rem;
   aspect-ratio: 1 / 1;
 }
 
@@ -25,7 +26,7 @@ ul.banner__images {
   }
 }
 
-@media (max-width: 1016px) {
+@media (max-width: 767px) {
   .banner img.banner__image {
     display: inline-block;
     width: 10rem;

@@ -1,11 +1,12 @@
 section.study-section {
-  padding-left: 5%;
   width: 100%;
+  margin-top: 3rem;
 }
 
 h2.study-section__title {
   font-size: 2.4rem;
   padding-left: 2rem;
+  margin: 0;
 }
 
 ul.study-section__list {
@@ -14,6 +15,7 @@ ul.study-section__list {
   gap: 1.5rem;
   width: 100%;
   padding: 0;
+  margin-top: 2rem;
 }
 
 article.study {
@@ -73,15 +75,21 @@ article.study .study__like:hover {
 }
 
 @media (max-width: 1106px) {
+  ul.study-section__list li {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+
   article.study {
-    width: 47%;
-    min-width: 26rem;
+    width: 100%;
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 767px) {
+  ul.study-section__list li {
+    flex: 0 0 100%;
+  }
+
   article.study {
     width: 100%;
-    min-width: 26rem;
   }
 }

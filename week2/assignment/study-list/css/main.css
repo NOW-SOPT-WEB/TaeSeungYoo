@@ -1,12 +1,10 @@
 main.main {
   padding-bottom: 9rem;
   padding-left: 2rem;
-  width: 85%;
+  width: calc(100% - 20rem);
+  overflow: hidden;
 }
 
-#study-all,
-#study-common,
-#study-web,
-#study-server {
-  height: 9rem;
+@media (max-width: 1106px) {
+  width: calc(100% - 15rem);
 }
