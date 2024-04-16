@@ -1,8 +1,8 @@
 @import "../global.css";
+@import "../components/sidebar.css";
 @import "../components/header.css";
 @import "../components/footer.css";
 @import "../components/nav.css";
-@import "../components/main.css";
 @import "../components/study.css";
 @import "../components/banner.css";
 

@@ -1,3 +1,10 @@
+main.main {
+  padding-bottom: 9rem;
+  padding-left: 2rem;
+  width: calc(100% - 20rem);
+  overflow: hidden;
+}
+
 section.study-section {
   width: 100%;
   margin-top: 3rem;
@@ -75,6 +82,10 @@ article.study .study__like:hover {
 }
 
 @media (max-width: 1106px) {
+  main.main {
+    width: calc(100% - 15rem);
+  }
+
   ul.study-section__list li {
     flex: 0 0 calc(50% - 1.5rem);
   }

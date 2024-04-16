@@ -32,12 +32,29 @@
     <title>솝터디</title>
   </head>
   <body>
+    <div class="bg-wrapper hidden"></div>
+    <section class="sidebar hide-sidebar">
+      <header class="sidebar__header">
+        <span class="material-symbols-outlined"> arrow_forward_ios </span>
+      </header>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="javascript:void(0);">관심 스터디</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="javascript:void(0);">관리자 페이지</a>
+        </li>
+        <li class="sidebar__item"><a href="cart.html">장바구니</a></li>
+      </ul>
+    </section>
     <header class="header">
       <div class="header__left">
-        <span class="material-symbols-outlined"> import_contacts </span>
+        <a href="index.html">
+          <span class="material-symbols-outlined"> import_contacts </span>
+        </a>
       </div>
       <div class="header__title">
-        <h1>SOPT 스터디</h1>
+        <a href="index.html"><h1>SOPT 스터디</h1></a>
       </div>
       <div class="header__right">
         <span class="material-symbols-outlined">menu</span>
@@ -67,5 +84,6 @@
     </footer>
     <script src="js/banner.js" type="module"></script>
     <script src="js/study.js" type="module"></script>
+    <script src="js/sidebar.js" type="module"></script>
   </body>
 </html>

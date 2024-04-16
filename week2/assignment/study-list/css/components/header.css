@@ -23,10 +23,15 @@ div.header__title {
   min-width: 17rem;
 }
 
-div.header__title > h1 {
+div.header__title h1 {
+  cursor: pointer;
   font-size: 3rem;
 }
 
 div.header__right {
   justify-content: flex-end;
+}
+
+.header > div > span {
+  cursor: pointer;
 }
