@@ -8,11 +8,12 @@ h2.study-section__title {
   padding-left: 2rem;
 }
 
-div.study-section__list {
+ul.study-section__list {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   width: 100%;
+  padding: 0;
 }
 
 article.study {
@@ -56,6 +57,7 @@ article.study .study__like {
   cursor: pointer;
   font-variation-settings: "FILL" 1;
 }
+
 article.study .study__like:hover {
   color: #ff9494;
 }
