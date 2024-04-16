@@ -1,4 +1,5 @@
 import { STUDY_LIST, PART_NAME, FILTER_NAME } from "./constants.js";
+import { Utils } from "../utils";
 
 const studySection = document.querySelector(".study-section");
 const navItems = document.querySelectorAll(".nav__item");
@@ -50,7 +51,7 @@ const renderStudyList = () => {
       part.textContent = `모집대상: ${PART_NAME[study.part]}`;
 
       price.className = "study__price";
-      price.textContent = `참가비: ${study.price}원`;
+      price.textContent = `참가비: ${Utils.numberWithCommas(study.price)}원`;
 
       icon.className = "material-symbols-outlined study__like";
       icon.textContent = "favorite";
