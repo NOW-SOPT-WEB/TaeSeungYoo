@@ -25,7 +25,7 @@ const handleClickItemCheck = (event, id) => {
   checkCheckboxAll(cartObj);
 };
 
-const handleDeleteItem = (id, price) => {
+const handleDeleteItem = (id) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   delete cartObj[id];
   localStorage.setItem("cart", JSON.stringify(cartObj));
@@ -84,8 +84,7 @@ export const renderCartList = () => {
       icon.textContent = "delete";
       button.appendChild(icon);
       button.addEventListener("click", () => {
-        if (confirm(`${title}을(를) 삭제하시겠습니까?`))
-          handleDeleteItem(key, price);
+        if (confirm(`${title}을(를) 삭제하시겠습니까?`)) handleDeleteItem(key);
       });
       td_deleteBtn.append(button);
 
