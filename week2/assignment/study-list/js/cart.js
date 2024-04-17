@@ -4,7 +4,12 @@ import { Utils } from "../utils";
 const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
 const checkboxAll = document.querySelector(".cart-table__checkbox-all");
+const emptyTable = document.querySelector(".empty-table");
 
+const checkCheckboxAll = (obj) => {
+  const checkedList = Object.values(obj).map((study) => study.checked);
+  checkboxAll.checked = checkedList.every((isCheck) => isCheck === true);
+};
 const handleClickCheckboxAll = (event) => {
   const checked = event.target.checked;
   const cartObj = JSON.parse(localStorage.getItem("cart")) ?? {};
@@ -18,9 +23,7 @@ const handleClickItemCheck = (event, id) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   cartObj[id].checked = event.target.checked;
   localStorage.setItem("cart", JSON.stringify(cartObj));
-
-  const checkedList = Object.values(cartObj).map((study) => study.checked);
-  checkboxAll.checked = checkedList.every((isCheck) => isCheck === true);
+  checkCheckboxAll(cartObj);
 };
 
 const handleDeleteItem = (id, price) => {
@@ -36,7 +39,7 @@ export const renderCartList = () => {
   }
 
   const cartObj = JSON.parse(localStorage.getItem("cart"));
-  if (cartObj || Object.keys(cartObj).length !== 0) {
+  if (cartObj && Object.keys(cartObj).length !== 0) {
     Object.entries(cartObj).forEach(([key, value]) => {
       const { image_url, title, price, part, checked } = value;
       const tr = document.createElement("tr");
@@ -44,6 +47,7 @@ export const renderCartList = () => {
       tr.dataset.id = key;
 
       const td_checkbox = document.createElement("td");
+      const label = document.createElement("label");
       const td_image = document.createElement("td");
       const td_title = document.createElement("td");
       const td_price = document.createElement("td");
@@ -61,16 +65,19 @@ export const renderCartList = () => {
 
       const input = document.createElement("input");
       input.type = "checkbox";
+      input.id = key;
       input.addEventListener("click", (event) => {
         handleClickItemCheck(event, key);
       });
       input.checked = checked;
       td_checkbox.appendChild(input);
 
+      label.htmlFor = key;
       const img = document.createElement("img");
       img.alt = "study-thumbnail";
       img.src = image_url;
-      td_image.appendChild(img);
+      label.appendChild(img);
+      td_image.appendChild(label);
 
       const button = document.createElement("button");
       const icon = document.createElement("span");
@@ -90,7 +97,13 @@ export const renderCartList = () => {
       tr.appendChild(td_part);
       tr.appendChild(td_deleteBtn);
       tbody.appendChild(tr);
+
+      checkCheckboxAll(cartObj);
     });
+  } else {
+    emptyTable.classList.add("flex");
+    emptyTable.classList.remove("hidden");
+    checkboxAll.checked = false;
   }
 };
 

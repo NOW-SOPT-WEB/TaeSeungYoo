@@ -77,6 +77,17 @@ const handleClickApplyBtn = () => {
 };
 
 modalOpenBtn.addEventListener("click", () => {
+  const cartObj = JSON.parse(localStorage.getItem("cart"));
+  const checkedList = Object.values(cartObj).map((study) => study.checked);
+  if (checkedList.length === 0) {
+    alert("신청할 스터디가 없어요.");
+    return;
+  }
+  if (checkedList.every((isCheck) => isCheck === false)) {
+    alert("신청할 스터디를 선택해주세요.");
+    return;
+  }
+
   handleToggleModal();
   renderApplyList();
 });

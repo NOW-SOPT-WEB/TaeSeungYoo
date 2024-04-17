@@ -84,3 +84,7 @@ a {
 .visible {
   display: block;
 }
+
+.flex {
+  display: flex;
+}
