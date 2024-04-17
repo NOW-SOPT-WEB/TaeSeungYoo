@@ -82,7 +82,15 @@
         </div>
       </section>
       <div class="table-container">
-        <table class="cart-table">
+        <table class="header-table">
+          <colgroup>
+            <col style="width: 10%" />
+            <col style="width: 10%" />
+            <col style="width: 40%" />
+            <col style="width: 15%" />
+            <col style="width: 15%" />
+            <col style="width: 10%" />
+          </colgroup>
           <thead class="cart-table__header">
             <tr>
               <th>
@@ -94,19 +102,32 @@
               <th></th>
             </tr>
           </thead>
-          <tbody class="cart-table__body"></tbody>
         </table>
-        <section class="empty-table hidden">
-          <div class="empty-table__text">
-            <span>장바구니가 비어있어요.</span>
-            <a href="index.html"
-              ><span>스터디 보러가기</span>
-              <span class="material-symbols-outlined"> arrow_forward </span></a
-            >
-          </div>
-        </section>
+        <div class="table-wrapper">
+          <table class="cart-table">
+            <colgroup>
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+              <col style="width: 40%" />
+              <col style="width: 15%" />
+              <col style="width: 15%" />
+              <col style="width: 10%" />
+            </colgroup>
+            <tbody class="cart-table__body"></tbody>
+          </table>
+          <section class="empty-table hidden">
+            <div class="empty-table__text">
+              <span>장바구니가 비어있어요.</span>
+              <a href="index.html"
+                ><span>스터디 보러가기</span>
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span></a
+              >
+            </div>
+          </section>
+        </div>
       </div>
-
       <div class="cart-buttons">
         <a href="index.html">
           <button class="cart-button cart-buttons__home">홈으로</button>

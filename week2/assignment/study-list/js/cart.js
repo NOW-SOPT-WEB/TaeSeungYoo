@@ -5,7 +5,6 @@ const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
 const checkboxAll = document.querySelector(".cart-table__checkbox-all");
 const emptyTable = document.querySelector(".empty-table");
-
 const checkCheckboxAll = (obj) => {
   const checkedList = Object.values(obj).map((study) => study.checked);
   checkboxAll.checked = checkedList.every((isCheck) => isCheck === true);

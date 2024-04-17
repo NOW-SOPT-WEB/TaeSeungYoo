@@ -1,5 +1,15 @@
 .table-container {
   width: 60%;
+}
+
+.header-table {
+  width: 100%;
+  height: 4rem;
+  border-collapse: collapse;
+}
+
+.table-wrapper {
+  width: 100%;
   max-height: calc(100vh - 40rem);
   overflow-y: scroll;
   overflow-x: hidden;
@@ -8,7 +18,6 @@
 .cart-table {
   width: 100%;
   height: 100%;
-  gap: 0;
   border-collapse: collapse;
 }
 
@@ -30,10 +39,6 @@
 
 .cart-table__header th:last-of-type {
   width: 10rem;
-}
-
-.cart-table__body {
-  width: 100%;
 }
 
 .cart-table td {
@@ -59,12 +64,6 @@
 
 .cart-table__row .cart-table__title {
   text-align: start;
-}
-
-.cart-table__row .cart-table__price {
-}
-
-.cart-table__row .cart-table__part {
 }
 
 .cart-table__row .cart-table__delete {
