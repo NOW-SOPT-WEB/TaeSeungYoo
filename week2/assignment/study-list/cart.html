@@ -61,8 +61,8 @@
       </div>
     </header>
     <main class="main">
-      <div class="bg-wrapper hidden"></div>
-      <section class="modal apply-modal">
+      <div class="modal-wrapper hidden"></div>
+      <section class="modal apply-modal hide-modal">
         <div>
           <header class="modal__header">
             <span class="material-symbols-outlined"> close </span>
@@ -97,7 +97,7 @@
             <span>721,000원</span>
           </div>
           <div class="modal-buttons">
-            <button class="modal-button modal-buttons__home">취소</button>
+            <button class="modal-button modal-buttons__cancel">취소</button>
             <button class="modal-button modal-buttons__apply">신청하기</button>
           </div>
         </div>
@@ -113,87 +113,7 @@
               <th></th>
             </tr>
           </thead>
-          <tbody class="cart-table__body">
-            <tr class="cart-table__row">
-              <td class="cart-table__checkbox"><input type="checkbox" /></td>
-              <td class="cart-table__image">
-                <img
-                  alt="상품 이미지"
-                  src="https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/29/c2dd2cac-0cbb-4e62-9e43-a8349c4cb38d.jpeg"
-                />
-              </td>
-              <td class="cart-table__title">상품 타이틀</td>
-              <td class="cart-table__price">10,000원</td>
-              <td class="cart-table__part">전자제품</td>
-              <td class="cart-table__delete">
-                <button>
-                  <span class="material-symbols-outlined"> delete </span>
-                </button>
-              </td>
-            </tr>
-            <tr class="cart-table__row">
-              <td class="cart-table__checkbox"><input type="checkbox" /></td>
-              <td class="cart-table__image">
-                <img
-                  alt="상품 이미지"
-                  src="https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/29/c2dd2cac-0cbb-4e62-9e43-a8349c4cb38d.jpeg"
-                />
-              </td>
-              <td class="cart-table__title">상품 타이틀</td>
-              <td class="cart-table__price">10,000원</td>
-              <td class="cart-table__part">전자제품</td>
-              <td class="cart-table__delete">
-                <button>
-                  <span class="material-symbols-outlined"> delete </span>
-                </button>
-              </td>
-            </tr>
-            <tr class="cart-table__row">
-              <td class="cart-table__checkbox"><input type="checkbox" /></td>
-              <td class="cart-table__image">
-                <img
-                  alt="상품 이미지"
-                  src="https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/29/c2dd2cac-0cbb-4e62-9e43-a8349c4cb38d.jpeg"
-                />
-              </td>
-              <td class="cart-table__title">상품 타이틀</td>
-              <td class="cart-table__price">10,000원</td>
-              <td class="cart-table__part">전자제품</td>
-              <td class="cart-table__delete">
-                <button>삭제</button>
-              </td>
-            </tr>
-            <tr class="cart-table__row">
-              <td class="cart-table__checkbox"><input type="checkbox" /></td>
-              <td class="cart-table__image">
-                <img
-                  alt="상품 이미지"
-                  src="https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/29/c2dd2cac-0cbb-4e62-9e43-a8349c4cb38d.jpeg"
-                />
-              </td>
-              <td class="cart-table__title">상품 타이틀</td>
-              <td class="cart-table__price">10,000원</td>
-              <td class="cart-table__part">전자제품</td>
-              <td class="cart-table__delete">
-                <button>삭제</button>
-              </td>
-            </tr>
-            <tr class="cart-table__row">
-              <td class="cart-table__checkbox"><input type="checkbox" /></td>
-              <td class="cart-table__image">
-                <img
-                  alt="상품 이미지"
-                  src="https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/29/c2dd2cac-0cbb-4e62-9e43-a8349c4cb38d.jpeg"
-                />
-              </td>
-              <td class="cart-table__title">상품 타이틀</td>
-              <td class="cart-table__price">10,000원</td>
-              <td class="cart-table__part">전자제품</td>
-              <td class="cart-table__delete">
-                <button>삭제</button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody class="cart-table__body"></tbody>
         </table>
       </div>
 
@@ -213,5 +133,7 @@
     </footer>
 
     <script src="js/sidebar.js" type="module"></script>
+    <script src="js/cart.js" type="module"></script>
+    <script src="js/modal.js" type="module"></script>
   </body>
 </html>

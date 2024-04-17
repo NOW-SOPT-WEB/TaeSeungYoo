@@ -7,13 +7,18 @@ let selectPart = null; // all, common, web, server
 
 const handleClickStudy = (study) => {
   const { id, title, image_url, part, price } = study;
-  const studyObj = JSON.stringify({
-    title,
-    image_url,
-    part,
-    price,
-  });
-  localStorage.setItem(id, studyObj);
+  const cartObj = JSON.parse(localStorage.getItem("cart")) ?? {};
+  if (!(id in cartObj)) {
+    cartObj[id] = {
+      title,
+      image_url,
+      part,
+      price,
+    };
+    const totalPrice = Number(localStorage.getItem("totalPrice")) ?? 0;
+    localStorage.setItem("totalPrice", totalPrice + price);
+  }
+  localStorage.setItem("cart", JSON.stringify(cartObj));
 };
 
 const renderStudyList = () => {

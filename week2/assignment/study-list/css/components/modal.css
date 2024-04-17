@@ -1,10 +1,20 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--Black);
+  z-index: 2;
+  opacity: 0.4;
+}
+
 .apply-modal {
   position: absolute;
   width: 50vw;
   height: 70vh;
   left: 25%;
   top: 15%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +22,7 @@
   padding: 4rem;
   background-color: var(--White);
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
-  /*display: none;*/
+  border-radius: 1rem;
 
   ::-webkit-scrollbar {
     display: none;
@@ -107,7 +117,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 
-.modal-buttons__home {
+.modal-buttons__cancel {
   background-color: var(--LightGray);
 }
 
@@ -115,10 +125,18 @@
   background-color: var(--Primary02);
 }
 
-.modal-buttons__home:hover {
+.modal-buttons__cancel:hover {
   background-color: var(--Silver);
 }
 
 .modal-buttons__apply:hover {
   background-color: var(--Primary01);
+}
+
+.show-modal {
+  display: flex;
+}
+
+.hide-modal {
+  display: none;
 }
