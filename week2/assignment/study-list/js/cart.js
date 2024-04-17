@@ -3,11 +3,24 @@ import { Utils } from "../utils";
 
 const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
+const checkboxAll = document.querySelector(".cart-table__checkbox-all");
 
+const handleClickCheckboxAll = (event) => {
+  const checked = event.target.checked;
+  const cartObj = JSON.parse(localStorage.getItem("cart")) ?? {};
+  Object.keys(cartObj).forEach((key) => {
+    cartObj[key].checked = checked;
+  });
+  localStorage.setItem("cart", JSON.stringify(cartObj));
+  renderCartList();
+};
 const handleClickItemCheck = (event, id) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   cartObj[id].checked = event.target.checked;
   localStorage.setItem("cart", JSON.stringify(cartObj));
+
+  const checkedList = Object.values(cartObj).map((study) => study.checked);
+  checkboxAll.checked = checkedList.every((isCheck) => isCheck === true);
 };
 
 const handleDeleteItem = (id, price) => {
@@ -81,4 +94,5 @@ export const renderCartList = () => {
   }
 };
 
+checkboxAll.addEventListener("click", handleClickCheckboxAll);
 renderCartList();
