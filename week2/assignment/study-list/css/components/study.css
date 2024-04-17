@@ -73,7 +73,7 @@ article.study .study__like {
 }
 
 article.study .study__like:hover {
-    color: var(--primary01);
+    color: var(--Primary01);
 }
 
 @keyframes heartbeat {

@@ -1,0 +1,124 @@
+.apply-modal {
+  position: absolute;
+  width: 50vw;
+  height: 70vh;
+  left: 25%;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  padding: 4rem;
+  background-color: var(--White);
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  /*display: none;*/
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.apply-modal > div {
+  width: 100%;
+}
+
+.modal__header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal__header span {
+  cursor: pointer;
+}
+
+.modal__main {
+  height: 100%;
+}
+
+.modal__title {
+  font-size: 2rem;
+}
+
+.modal__list {
+  display: flex;
+  overflow-x: scroll;
+
+  margin: 0;
+  padding: 0;
+}
+
+.modal__item {
+  min-width: 20rem;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.item__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.item__title {
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal__item .item__price {
+  margin: 0;
+}
+
+.modal__total-price {
+  margin-bottom: 4rem;
+}
+
+.modal__total-price span {
+  font-size: 1.8rem;
+}
+
+.modal__total-price span:last-of-type {
+  font-weight: 700;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-button {
+  width: 10rem;
+  height: 4rem;
+  font-size: 1.3rem;
+  border: none;
+  transition: 0.2s;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.modal-buttons__home {
+  background-color: var(--LightGray);
+}
+
+.modal-buttons__apply {
+  background-color: var(--Primary02);
+}
+
+.modal-buttons__home:hover {
+  background-color: var(--Silver);
+}
+
+.modal-buttons__apply:hover {
+  background-color: var(--Primary01);
+}
