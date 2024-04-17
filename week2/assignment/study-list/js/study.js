@@ -14,6 +14,7 @@ const handleClickStudy = (study) => {
       image_url,
       part,
       price,
+      checked: false,
     };
     const totalPrice = Number(localStorage.getItem("totalPrice")) ?? 0;
     localStorage.setItem("totalPrice", totalPrice + price);

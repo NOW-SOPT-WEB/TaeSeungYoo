@@ -4,10 +4,12 @@ import { Utils } from "../utils";
 const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
 
-const handleDeleteItem = (id) => {
+const handleDeleteItem = (id, price) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   delete cartObj[id];
   localStorage.setItem("cart", JSON.stringify(cartObj));
+  const totalPrice = Number(localStorage.getItem("totalPrice"));
+  localStorage.setItem("totalPrice", (totalPrice - price).toString());
   renderCartList();
 };
 
@@ -55,7 +57,8 @@ const renderCartList = () => {
       icon.textContent = "delete";
       button.appendChild(icon);
       button.addEventListener("click", () => {
-        if (confirm(`${title}을(를) 삭제하시겠습니까?`)) handleDeleteItem(key);
+        if (confirm(`${title}을(를) 삭제하시겠습니까?`))
+          handleDeleteItem(key, price);
       });
       td_deleteBtn.append(button);
 
