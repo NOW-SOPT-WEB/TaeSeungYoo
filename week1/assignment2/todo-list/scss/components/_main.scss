@@ -1,0 +1,94 @@
+@use "../mixins";
+@use "../colors" as *;
+
+main {
+  margin-bottom: 5rem;
+  width: 100%;
+
+  & > section.todos {
+    @include mixins.flex(row, center, flex-start);
+    gap: 3rem;
+
+    & > section.todo {
+      & > h3.todo__title {
+        @include mixins.flex();
+        font-size: 2rem;
+      }
+
+      & > ul.todo__list {
+        gap: 1.5rem;
+        background-color: $BgWhite;
+        @include mixins.flex(column, flex-start);
+
+        & > li.todo__item {
+          padding: 1rem 2rem;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          width: 30rem;
+          height: 7rem;
+          background-color: $White;
+          background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+          animation: wiggle 2s linear infinite;
+          border-radius: 1rem;
+          @include mixins.flex(row, space-between);
+
+          & > div.item__text {
+            overflow: hidden;
+            width: 100%;
+            font-size: 1.6rem;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+
+          & > div.item__button {
+            @include mixins.flex();
+            display: none;
+            padding: 0.7rem;
+            background: radial-gradient(
+                            circle farthest-corner at 10% 20%,
+                            rgba(237, 3, 32, 0.87) 20.8%,
+                            rgba(242, 121, 1, 0.84) 74.4%
+            );
+            cursor: pointer;
+            border-radius: 50%;
+
+            & > span {
+              color: $White;
+            }
+          }
+
+          &:hover {
+            & > div.item__button {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(5deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  30% {
+    transform: rotateZ(3deg);
+  }
+  35% {
+    transform: rotateZ(-2deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
