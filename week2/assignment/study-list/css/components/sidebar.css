@@ -17,9 +17,9 @@ header.sidebar__header span {
 }
 
 header.sidebar__header span:hover {
-  color: #ffffff;
+  color: var(--white);
   transition: 0.2s;
-  background-color: #ff9494;
+  background-color: var(--primary01);
 }
 
 ul.sidebar__list {
@@ -34,7 +34,7 @@ li.sidebar__item {
 }
 
 li.sidebar__item:hover {
-  background-color: #ff9494;
+  background-color: var(--primary01);
   color: white;
   transition: 0.2s;
 }
@@ -48,7 +48,7 @@ div.bg-wrapper {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: #000000;
+  background-color: var(--black);
   z-index: 2;
   opacity: 0.4;
 }

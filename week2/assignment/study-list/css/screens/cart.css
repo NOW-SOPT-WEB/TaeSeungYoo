@@ -1,10 +1,35 @@
 @import "../global.css";
 @import "../components/sidebar.css";
 @import "../components/header.css";
+@import "../components/cart-table.css";
 @import "../components/footer.css";
 
-div.main-container {
+.main {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 10rem;
+}
+
+.cart_buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart_button {
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.cart_buttons__home {
+  background-color: var(--bg01);
+}
+
+.cart_buttons__apply {
+  background-color: var(--primary01);
 }

@@ -1,0 +1,48 @@
+.cart-table {
+  width: 60%;
+  gap: 0;
+  border-collapse: collapse;
+}
+
+.cart-table__header {
+  height: 4rem;
+}
+
+.cart-table__header th {
+  font-size: 1.4rem;
+  border-top: 3px solid #afc8ad;
+  border-bottom: 1px solid #afc8ad;
+  padding: 0;
+}
+
+.cart-table td {
+  height: 16rem;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 2rem 0;
+}
+
+.cart-table__row .cart-table__checkbox {
+}
+
+.cart-table__row .cart-table__image {
+  width: 16rem;
+}
+
+.cart-table__row .cart-table__image img {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.cart-table__row .cart-table__title {
+  text-align: start;
+}
+
+.cart-table__row .cart-table__price {
+}
+
+.cart-table__row .cart-table__part {
+}
+
+.cart-table__row .cart-table__delete {
+}
