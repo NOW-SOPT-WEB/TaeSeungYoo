@@ -4,16 +4,20 @@ import { Utils } from "../utils";
 const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
 
+const handleClickItemCheck = (event, id) => {
+  const cartObj = JSON.parse(localStorage.getItem("cart"));
+  cartObj[id].checked = event.target.checked;
+  localStorage.setItem("cart", JSON.stringify(cartObj));
+};
+
 const handleDeleteItem = (id, price) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   delete cartObj[id];
   localStorage.setItem("cart", JSON.stringify(cartObj));
-  const totalPrice = Number(localStorage.getItem("totalPrice"));
-  localStorage.setItem("totalPrice", (totalPrice - price).toString());
   renderCartList();
 };
 
-const renderCartList = () => {
+export const renderCartList = () => {
   while (tbody.firstChild) {
     tbody.removeChild(tbody.firstChild);
   }
@@ -21,7 +25,7 @@ const renderCartList = () => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   if (cartObj || Object.keys(cartObj).length !== 0) {
     Object.entries(cartObj).forEach(([key, value]) => {
-      const { image_url, title, price, part } = value;
+      const { image_url, title, price, part, checked } = value;
       const tr = document.createElement("tr");
       tr.className = "cart-table__row";
       tr.dataset.id = key;
@@ -44,6 +48,10 @@ const renderCartList = () => {
 
       const input = document.createElement("input");
       input.type = "checkbox";
+      input.addEventListener("click", (event) => {
+        handleClickItemCheck(event, key);
+      });
+      input.checked = checked;
       td_checkbox.appendChild(input);
 
       const img = document.createElement("img");

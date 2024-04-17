@@ -16,8 +16,6 @@ const handleClickStudy = (study) => {
       price,
       checked: false,
     };
-    const totalPrice = Number(localStorage.getItem("totalPrice")) ?? 0;
-    localStorage.setItem("totalPrice", totalPrice + price);
   }
   localStorage.setItem("cart", JSON.stringify(cartObj));
 };
