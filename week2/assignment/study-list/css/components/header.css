@@ -24,8 +24,8 @@ div.header__title {
 }
 
 div.header__title h1 {
-  cursor: pointer;
   font-size: 3rem;
+  cursor: pointer;
 }
 
 div.header__right {

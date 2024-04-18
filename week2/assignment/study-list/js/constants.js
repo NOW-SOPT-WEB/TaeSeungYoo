@@ -10,6 +10,7 @@ export const BANNER_IMAGES = [
   "https://makers-web-img.s3.ap-northeast-2.amazonaws.com/meeting/2024/03/28/92805918-7b7b-4499-8a6d-2ef312e2ddf7.jpeg",
 ];
 
+// 스터디 목록 데이터
 export const STUDY_LIST = [
   {
     id: 1,
@@ -181,12 +182,15 @@ export const STUDY_LIST = [
   },
 ];
 
+// nav 필터 이름
 export const FILTER_NAME = {
   all: "전체",
   common: "공통",
   web: "웹파트",
   server: "서버파트",
 };
+
+// 파트 이름
 export const PART_NAME = {
   common: "전체",
   web: "웹",

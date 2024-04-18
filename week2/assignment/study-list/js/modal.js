@@ -1,9 +1,9 @@
-import { Utils } from "../utils";
+import { Utils } from "../utils/index.js";
 import { renderCartList } from "./cart.js";
 
 const modalList = document.querySelector(".modal__list");
 const span_totalPrice = document.querySelector(
-  ".modal__total-price span:last-of-type",
+  ".modal__total-price span:last-of-type"
 );
 const wrapper = document.querySelector(".modal-wrapper");
 const modalOpenBtn = document.querySelector(".cart-buttons__apply");
@@ -13,6 +13,7 @@ const applyBtn = document.querySelector(".modal-buttons__apply");
 
 const applyKeys = [];
 
+// 신청 목록 렌더링
 const renderApplyList = () => {
   while (modalList.firstChild) {
     modalList.removeChild(modalList.firstChild);
@@ -52,6 +53,7 @@ const renderApplyList = () => {
   }
 };
 
+// 모달 토글 이벤트 핸들러
 const handleToggleModal = () => {
   const modal = document.querySelector(".apply-modal");
 
@@ -61,6 +63,7 @@ const handleToggleModal = () => {
   wrapper.classList.toggle("visible");
 };
 
+// 모딜에서 신청 버튼 클릭 이벤트 핸들러
 const handleClickApplyBtn = () => {
   if (confirm(`${applyKeys.length}개의 스터디를 신청하시겠습니까?`)) {
     const cartObj = JSON.parse(localStorage.getItem("cart"));
@@ -76,6 +79,7 @@ const handleClickApplyBtn = () => {
   }
 };
 
+// 장바구니에서 신청버튼 클릭 이벤트 핸들러
 modalOpenBtn.addEventListener("click", () => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   const checkedList = Object.values(cartObj).map((study) => study.checked);
@@ -91,6 +95,7 @@ modalOpenBtn.addEventListener("click", () => {
   handleToggleModal();
   renderApplyList();
 });
+
 modalCloseIcon.addEventListener("click", handleToggleModal);
 modalCloseBtn.addEventListener("click", handleToggleModal);
 wrapper.addEventListener("click", handleToggleModal);

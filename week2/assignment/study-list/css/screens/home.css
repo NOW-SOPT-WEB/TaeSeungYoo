@@ -7,7 +7,7 @@
 @import "../components/banner.css";
 
 div.main-container {
-  width: 100%;
   display: flex;
   margin-top: 10rem;
+  width: 100%;
 }

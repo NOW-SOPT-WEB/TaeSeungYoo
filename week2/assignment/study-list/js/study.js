@@ -1,10 +1,11 @@
 import { STUDY_LIST, PART_NAME, FILTER_NAME } from "./constants.js";
-import { Utils } from "../utils";
+import { Utils } from "../utils/index.js";
 
 const studySection = document.querySelector(".study-section");
 const navItems = document.querySelectorAll(".nav__item");
 let selectPart = null; // all, common, web, server
 
+// 스터디 클릭 이벤트 핸들러. 장바구니에 담기(로컬스토리지)
 const handleClickStudy = (study) => {
   const { id, title, image_url, part, price } = study;
   const cartObj = JSON.parse(localStorage.getItem("cart")) ?? {};
@@ -20,6 +21,7 @@ const handleClickStudy = (study) => {
   localStorage.setItem("cart", JSON.stringify(cartObj));
 };
 
+// 스터디 목록 렌더링
 const renderStudyList = () => {
   while (studySection.firstChild) {
     studySection.removeChild(studySection.firstChild);
@@ -79,6 +81,7 @@ const renderStudyList = () => {
   });
 };
 
+// 네비게이션 클릭 이벤트 핸들러
 const handleClickNav = (event) => {
   const select = event.target.textContent;
   if (select === "전체") {

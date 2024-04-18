@@ -2,6 +2,7 @@ import { BANNER_IMAGES } from "./constants.js";
 
 const banner = document.querySelector(".banner");
 
+// 배너 이미지를 렌더링하는 함수
 const renderBanner = () => {
   const ulFirst = document.createElement("ul");
   ulFirst.className = "banner__images banner__images--first";

@@ -10,7 +10,7 @@ footer.footer {
 }
 
 .footer > p {
+  margin: 0;
   font-size: 1.2rem;
   color: var(--Black);
-  margin: 0;
 }

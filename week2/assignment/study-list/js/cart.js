@@ -1,14 +1,18 @@
 import { PART_NAME } from "./constants.js";
-import { Utils } from "../utils";
+import { Utils } from "../utils/index.js";
 
 const table = document.querySelector(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
 const checkboxAll = document.querySelector(".cart-table__checkbox-all");
 const emptyTable = document.querySelector(".empty-table");
+
+// 전체 체크박스 상태 확인
 const checkCheckboxAll = (obj) => {
   const checkedList = Object.values(obj).map((study) => study.checked);
   checkboxAll.checked = checkedList.every((isCheck) => isCheck === true);
 };
+
+// 전체 체크박스 이벤트 핸들러
 const handleClickCheckboxAll = (event) => {
   const checked = event.target.checked;
   const cartObj = JSON.parse(localStorage.getItem("cart")) ?? {};
@@ -18,6 +22,8 @@ const handleClickCheckboxAll = (event) => {
   localStorage.setItem("cart", JSON.stringify(cartObj));
   renderCartList();
 };
+
+// 개별 체크박스 이벤트 핸들러
 const handleClickItemCheck = (event, id) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   cartObj[id].checked = event.target.checked;
@@ -25,6 +31,7 @@ const handleClickItemCheck = (event, id) => {
   checkCheckboxAll(cartObj);
 };
 
+// 삭제 버튼 이벤트 핸들러
 const handleDeleteItem = (id) => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   delete cartObj[id];
@@ -32,6 +39,7 @@ const handleDeleteItem = (id) => {
   renderCartList();
 };
 
+// 장바구니 목록 렌더링
 export const renderCartList = () => {
   while (tbody.firstChild) {
     tbody.removeChild(tbody.firstChild);

@@ -7,8 +7,8 @@ section.banner {
 
 ul.banner__images {
   display: flex;
-  padding: 0;
   gap: 1rem;
+  padding: 0;
   animation: scrollBanner 15s linear infinite;
 }
 

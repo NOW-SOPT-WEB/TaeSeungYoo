@@ -1,64 +1,64 @@
-section.sidebar {
+.sidebar {
+  padding: 2rem;
   position: fixed;
   top: 0;
-  height: 100vh;
-  width: 30rem;
   right: -30rem;
-  background-color: #fefefe;
-  padding: 2rem;
   z-index: 3;
+  width: 30rem;
+  height: 100vh;
+  background-color: #fefefe;
   transition: transform 0.5s ease-out;
 }
 
-header.sidebar__header span {
-  cursor: pointer;
+.sidebar__header span {
   padding: 0.5rem;
+  cursor: pointer;
   border-radius: 50%;
 }
 
-header.sidebar__header span:hover {
+.sidebar__header span:hover {
+  background-color: var(--Primary01);
   color: var(--White);
   transition: 0.2s;
-  background-color: var(--Primary01);
 }
 
-ul.sidebar__list {
+.sidebar__list {
   margin: 2rem 0 0 0;
   padding: 0;
 }
 
-li.sidebar__item {
+.sidebar__item {
   margin-bottom: 0.5rem;
   border-radius: 1rem;
 }
 
-li.sidebar__item:hover {
+.sidebar__item:hover {
   background-color: var(--Primary01);
   color: white;
   transition: 0.2s;
 }
 
-li.sidebar__item a {
+.sidebar__item a {
   display: block;
   padding: 1rem;
-  font-size: 2rem;
   width: 100%;
   height: 100%;
+  font-size: 2rem;
 }
 
-div.bg-wrapper {
+.bg-wrapper {
   position: fixed;
   top: 0;
+  z-index: 2;
   width: 100%;
   height: 100vh;
   background-color: var(--Black);
-  z-index: 2;
   opacity: 0.4;
 }
 
 .show-sidebar {
-  transform: translateX(-30rem);
   visibility: visible;
+  transform: translateX(-30rem);
   opacity: 1;
 }
 
