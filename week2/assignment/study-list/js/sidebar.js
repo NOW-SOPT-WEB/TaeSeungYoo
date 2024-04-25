@@ -1,6 +1,8 @@
-const sidebarOpenBtn = document.querySelector(".header__right span");
-const sidebarCloseBtn = document.querySelector(".sidebar__header span");
-const wrapper = document.querySelector(".bg-wrapper");
+import { Dom } from "../utils/index.js";
+
+const sidebarOpenBtn = Dom.qs(".header__right span");
+const sidebarCloseBtn = Dom.qs(".sidebar__header span");
+const wrapper = Dom.qs(".bg-wrapper");
 
 const setBodyOverflow = (overflow) => {
   document.body.style.overflow = overflow;
@@ -8,7 +10,7 @@ const setBodyOverflow = (overflow) => {
 
 // 사이드바 열렸을 때 스크롤 제한
 const handleToggleSidebar = () => {
-  const sidebar = document.querySelector(".sidebar");
+  const sidebar = Dom.qs(".sidebar");
 
   if (sidebar.classList.contains("show-sidebar")) {
     setBodyOverflow("auto");

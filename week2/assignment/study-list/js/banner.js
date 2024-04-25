@@ -1,6 +1,7 @@
 import { BANNER_IMAGES } from "./constants.js";
+import { Dom } from "../utils/index.js";
 
-const banner = document.querySelector(".banner");
+const banner = Dom.qs(".banner");
 
 // 배너 이미지를 렌더링하는 함수
 const renderBanner = () => {
@@ -20,8 +21,7 @@ const renderBanner = () => {
     ulSecond.appendChild(li.cloneNode(true));
   });
 
-  banner.appendChild(ulFirst);
-  banner.appendChild(ulSecond);
+  banner.append(ulFirst, ulSecond);
 };
 
 renderBanner();

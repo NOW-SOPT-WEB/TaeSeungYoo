@@ -1,15 +1,14 @@
-import { Utils } from "../utils/index.js";
+import { Utils, Dom } from "../utils/index.js";
+import { MESSAGES } from "./constants.js";
 import { renderCartList } from "./cart.js";
 
-const modalList = document.querySelector(".modal__list");
-const span_totalPrice = document.querySelector(
-  ".modal__total-price span:last-of-type"
-);
-const wrapper = document.querySelector(".modal-wrapper");
-const modalOpenBtn = document.querySelector(".cart-buttons__apply");
-const modalCloseIcon = document.querySelector(".modal__header span");
-const modalCloseBtn = document.querySelector(".modal-buttons__cancel");
-const applyBtn = document.querySelector(".modal-buttons__apply");
+const modalList = Dom.qs(".modal__list");
+const span_totalPrice = Dom.qs(".modal__total-price span:last-of-type");
+const wrapper = Dom.qs(".modal-wrapper");
+const modalOpenBtn = Dom.qs(".cart-buttons__apply");
+const modalCloseIcon = Dom.qs(".modal__header span");
+const modalCloseBtn = Dom.qs(".modal-buttons__cancel");
+const applyBtn = Dom.qs(".modal-buttons__apply");
 
 const applyKeys = [];
 
@@ -42,9 +41,7 @@ const renderApplyList = () => {
         p.className = "item__price";
         p.textContent = `${Utils.numberWithCommas(price)}원`;
 
-        li.appendChild(img);
-        li.appendChild(h4);
-        li.appendChild(p);
+        li.append(img, h4, p);
 
         modalList.appendChild(li);
       }
@@ -55,7 +52,7 @@ const renderApplyList = () => {
 
 // 모달 토글 이벤트 핸들러
 const handleToggleModal = () => {
-  const modal = document.querySelector(".apply-modal");
+  const modal = Dom.qs(".apply-modal");
 
   modal.classList.toggle("hide-modal");
   modal.classList.toggle("show-modal");
@@ -65,7 +62,7 @@ const handleToggleModal = () => {
 
 // 모딜에서 신청 버튼 클릭 이벤트 핸들러
 const handleClickApplyBtn = () => {
-  if (confirm(`${applyKeys.length}개의 스터디를 신청하시겠습니까?`)) {
+  if (confirm(MESSAGES.APPLY(applyKeys.length))) {
     const cartObj = JSON.parse(localStorage.getItem("cart"));
     applyKeys.forEach((key) => {
       delete cartObj[key];
@@ -75,7 +72,7 @@ const handleClickApplyBtn = () => {
     handleToggleModal();
     renderCartList();
 
-    alert("신청이 완료되었습니다.");
+    alert(MESSAGES.COMPLETE);
   }
 };
 
@@ -84,11 +81,11 @@ modalOpenBtn.addEventListener("click", () => {
   const cartObj = JSON.parse(localStorage.getItem("cart"));
   const checkedList = Object.values(cartObj).map((study) => study.checked);
   if (checkedList.length === 0) {
-    alert("신청할 스터디가 없어요.");
+    alert(MESSAGES.EMPTY);
     return;
   }
   if (checkedList.every((isCheck) => isCheck === false)) {
-    alert("신청할 스터디를 선택해주세요.");
+    alert(MESSAGES.NOT_CHECKED);
     return;
   }
 

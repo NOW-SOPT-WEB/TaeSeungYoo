@@ -1,10 +1,10 @@
-import { PART_NAME } from "./constants.js";
-import { Utils } from "../utils/index.js";
+import { MESSAGES, PART_NAME } from "./constants.js";
+import { Utils, Dom } from "../utils/index.js";
 
-const table = document.querySelector(".cart-table");
+const table = Dom.qs(".cart-table");
 const tbody = table.querySelector(".cart-table__body");
-const checkboxAll = document.querySelector(".cart-table__checkbox-all");
-const emptyTable = document.querySelector(".empty-table");
+const checkboxAll = Dom.qs(".cart-table__checkbox-all");
+const emptyTable = Dom.qs(".empty-table");
 
 // 전체 체크박스 상태 확인
 const checkCheckboxAll = (obj) => {
@@ -92,16 +92,18 @@ export const renderCartList = () => {
       icon.textContent = "delete";
       button.appendChild(icon);
       button.addEventListener("click", () => {
-        if (confirm(`${title}을(를) 삭제하시겠습니까?`)) handleDeleteItem(key);
+        if (confirm(MESSAGES.DELETE_STUDY(title))) handleDeleteItem(key);
       });
       td_deleteBtn.append(button);
 
-      tr.appendChild(td_checkbox);
-      tr.appendChild(td_image);
-      tr.appendChild(td_title);
-      tr.appendChild(td_price);
-      tr.appendChild(td_part);
-      tr.appendChild(td_deleteBtn);
+      tr.append(
+        td_checkbox,
+        td_image,
+        td_title,
+        td_price,
+        td_part,
+        td_deleteBtn,
+      );
       tbody.appendChild(tr);
 
       checkCheckboxAll(cartObj);

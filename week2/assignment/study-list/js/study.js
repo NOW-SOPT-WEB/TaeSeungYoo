@@ -1,8 +1,8 @@
-import { STUDY_LIST, PART_NAME, FILTER_NAME } from "./constants.js";
-import { Utils } from "../utils/index.js";
+import { STUDY_LIST, PART_NAME, FILTER_NAME, MESSAGES } from "./constants.js";
+import { Utils, Dom } from "../utils/index.js";
 
-const studySection = document.querySelector(".study-section");
-const navItems = document.querySelectorAll(".nav__item");
+const studySection = Dom.qs(".study-section");
+const navItems = Dom.qsAll(".nav__item");
 let selectPart = null; // all, common, web, server
 
 // 스터디 클릭 이벤트 핸들러. 장바구니에 담기(로컬스토리지)
@@ -62,14 +62,10 @@ const renderStudyList = () => {
       icon.className = "material-symbols-outlined study__like";
       icon.textContent = "favorite";
 
-      article.appendChild(img);
-      article.appendChild(h3);
-      article.appendChild(part);
-      article.appendChild(price);
-      article.appendChild(icon);
+      article.append(img, h3, part, price, icon);
 
       article.addEventListener("click", () => {
-        if (confirm(`${study.title}를(을) 장바구니에 담으시겠어요?`)) {
+        if (confirm(MESSAGES.ADD_CART(study.title))) {
           handleClickStudy(study);
         }
       });

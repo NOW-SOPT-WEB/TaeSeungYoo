@@ -196,3 +196,12 @@ export const PART_NAME = {
   web: "웹",
   server: "서버",
 };
+
+export const MESSAGES = {
+  COMPLETE: "신청이 완료되었습니다.",
+  EMPTY: "신청할 스터디가 없어요.",
+  NOT_CHECKED: "신청할 스터디를 선택해주세요.",
+  APPLY: (count) => `${count}개의 스터디를 신청하시겠습니까?`,
+  DELETE_STUDY: (title) => `${title}을(를) 삭제하시겠습니까?`,
+  ADD_CART: (title) => `${title}를(을) 장바구니에 담으시겠어요?`,
+};
