@@ -8,8 +8,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: "@img", replacement: resolve(__dirname, "src/assets/img") },
-      { find: "@pages", replacement: resolve(__dirname, "src/pages/*") },
-      { find: "@routes", replacement: resolve(__dirname, "src/routes") },
+      { find: "@pages", replacement: resolve(__dirname, "src/pages") },
       {
         find: "@components",
         replacement: resolve(__dirname, "src/components"),
