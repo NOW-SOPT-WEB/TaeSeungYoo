@@ -1,0 +1,51 @@
+@import "../global.css";
+@import "../components/modal.css";
+@import "../components/sidebar.css";
+@import "../components/header.css";
+@import "../components/cart-table.css";
+@import "../components/footer.css";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10rem;
+  padding-top: 3rem;
+  width: 100%;
+  height: calc(100vh - 25rem);
+}
+
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.cart-button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  width: 20rem;
+  height: 5rem;
+  font-size: 1.3rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.cart-buttons__home {
+  background-color: var(--LightGray);
+}
+
+.cart-buttons__apply {
+  background-color: var(--Primary02);
+}
+
+.cart-buttons__home:hover {
+  background-color: var(--Silver);
+}
+
+.cart-buttons__apply:hover {
+  background-color: var(--Primary01);
+}

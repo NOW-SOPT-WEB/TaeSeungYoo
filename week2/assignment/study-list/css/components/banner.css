@@ -1,0 +1,35 @@
+section.banner {
+  display: flex;
+  margin-top: 2rem;
+  margin-right: 4rem;
+  overflow-x: hidden;
+}
+
+ul.banner__images {
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  animation: scrollBanner 15s linear infinite;
+}
+
+.banner img.banner__image {
+  width: 15rem;
+  aspect-ratio: 1 / 1;
+}
+
+@keyframes scrollBanner {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .banner img.banner__image {
+    display: inline-block;
+    width: 10rem;
+    aspect-ratio: 1 / 1;
+  }
+}

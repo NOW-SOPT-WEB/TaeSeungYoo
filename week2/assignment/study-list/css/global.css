@@ -1,0 +1,77 @@
+:root {
+  --Primary01: #88ab8e;
+  --Primary02: #afc8ad;
+  --bg01: #eee7da;
+  --bg02: #f2f1eb;
+  --Black: #000000;
+  --Silver: #c0c0c0;
+  --Gray: #808080;
+  --DarkGray: #a9a9a9;
+  --LightGray: #d3d3d3;
+  --White: #ffffff;
+  --Maroon: #800000;
+  --Red01: #ff0000;
+  --Red02: #f44336;
+  --Red03: #ef5350;
+  --Red04: #ef9a9a;
+  --Red05: #ffcdd2;
+  --Purple: #800080;
+  --Fuchsia: #ff00ff;
+  --Green: #008000;
+  --Lime: #00ff00;
+  --Olive: #808000;
+  --Yellow: #ffff00;
+  --Navy: #000080;
+  --Blue: #0000ff;
+  --Teal: #008080;
+  --Aqua: #00ffff;
+}
+
+* {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+html,
+body {
+  background-color: var(--bg02);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}

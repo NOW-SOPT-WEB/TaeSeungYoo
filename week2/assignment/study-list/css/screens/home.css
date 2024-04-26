@@ -1,0 +1,13 @@
+@import "../global.css";
+@import "../components/sidebar.css";
+@import "../components/header.css";
+@import "../components/footer.css";
+@import "../components/nav.css";
+@import "../components/study.css";
+@import "../components/banner.css";
+
+div.main-container {
+  display: flex;
+  margin-top: 10rem;
+  width: 100%;
+}

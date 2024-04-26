@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      name="viewport"
+    />
+    <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+    <link
+      href="https://play-lh.googleusercontent.com/pj0Qi3diqDKY7sMaHCoIjeGIi9s_8sWfkeISsSATE6R3mE5NEIAPcW83YwabXeNnR86J=w240-h480-rw"
+      rel="icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <link
+      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+      referrerpolicy="no-referrer"
+      rel="stylesheet"
+    />
+    <link
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/screens/cart.css" rel="stylesheet" />
+    <title>솝터디 - 장바구니</title>
+  </head>
+  <body>
+    <div class="bg-wrapper hidden"></div>
+    <section class="sidebar hide-sidebar">
+      <header class="sidebar__header">
+        <span class="material-symbols-outlined"> arrow_forward_ios </span>
+      </header>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="javascript:void(0);">관심 스터디</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="javascript:void(0);">관리자 페이지</a>
+        </li>
+        <li class="sidebar__item"><a href="cart.html">장바구니</a></li>
+      </ul>
+    </section>
+    <header class="header">
+      <div class="header__left">
+        <a href="index.html">
+          <span class="material-symbols-outlined"> import_contacts </span>
+        </a>
+      </div>
+      <div class="header__title">
+        <a href="index.html"><h1>SOPT 스터디</h1></a>
+      </div>
+      <div class="header__right">
+        <span class="material-symbols-outlined">menu</span>
+      </div>
+    </header>
+    <main class="main">
+      <div class="modal-wrapper hidden"></div>
+      <section class="modal apply-modal hide-modal">
+        <div>
+          <header class="modal__header">
+            <span class="material-symbols-outlined"> close </span>
+          </header>
+          <h3 class="modal__title">신청할 스터디</h3>
+          <ul class="modal__list"></ul>
+        </div>
+        <div>
+          <div class="modal__total-price">
+            <span>총 참가비: </span>
+            <span></span>
+          </div>
+          <div class="modal-buttons">
+            <button class="modal-button modal-buttons__cancel">취소</button>
+            <button class="modal-button modal-buttons__apply">신청하기</button>
+          </div>
+        </div>
+      </section>
+      <div class="table-container">
+        <table class="header-table">
+          <colgroup class="table-colgroup">
+            <col style="width: 10%" />
+            <col style="width: 10%" />
+            <col style="width: 40%" />
+            <col style="width: 15%" />
+            <col style="width: 15%" />
+            <col style="width: 10%" />
+          </colgroup>
+          <thead class="cart-table__header">
+            <tr>
+              <th>
+                <input class="cart-table__checkbox-all" type="checkbox" />
+              </th>
+              <th colspan="2">스터디 정보</th>
+              <th>참가비</th>
+              <th>대상 파트</th>
+              <th></th>
+            </tr>
+          </thead>
+        </table>
+        <div class="table-wrapper">
+          <table class="cart-table">
+            <colgroup class="table-colgroup">
+              <col style="width: 10%" />
+              <col style="width: 10%" />
+              <col style="width: 40%" />
+              <col style="width: 15%" />
+              <col style="width: 15%" />
+              <col style="width: 10%" />
+            </colgroup>
+            <tbody class="cart-table__body"></tbody>
+          </table>
+          <section class="empty-table hidden">
+            <div class="empty-table__text">
+              <span>장바구니가 비어있어요.</span>
+              <a href="index.html"
+                ><span>스터디 보러가기</span>
+                <span class="material-symbols-outlined">
+                  arrow_forward
+                </span></a
+              >
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="cart-buttons">
+        <a href="index.html">
+          <button class="cart-button cart-buttons__home">홈으로</button>
+        </a>
+        <button class="cart-button cart-buttons__apply">신청하기</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__name">유태승</p>
+      <p class="footer__email">remicon99@gmail.com</p>
+      <p class="footer__phone">010-4872-0846</p>
+      <p class="footer_text">새싹 웹팟 화이팅! / 숨심스 화이팅!</p>
+    </footer>
+
+    <script src="js/sidebar.js" type="module"></script>
+    <script src="js/cart.js" type="module"></script>
+    <script src="js/modal.js" type="module"></script>
+  </body>
+</html>
