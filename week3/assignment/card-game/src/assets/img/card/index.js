@@ -13,6 +13,7 @@ import cardImg12 from "@img/card/card12.png";
 import cardImg13 from "@img/card/card13.png";
 import cardImg14 from "@img/card/card14.png";
 import cardImg15 from "@img/card/card15.png";
+import cardImg16 from "@img/card/card16.png";
 import coverImg from "@img/card/card-cover.jpg";
 
 export const cardImages = {
@@ -32,4 +33,5 @@ export const cardImages = {
   13: cardImg13,
   14: cardImg14,
   15: cardImg15,
+  16: cardImg16,
 };

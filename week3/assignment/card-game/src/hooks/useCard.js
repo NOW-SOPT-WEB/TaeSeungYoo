@@ -34,7 +34,7 @@ const useCard = () => {
     const numbers = new Set();
 
     while (numbers.size < cardNum) {
-      numbers.add(Math.floor(Math.random() * 15) + 1);
+      numbers.add(Math.floor(Math.random() * 16) + 1);
     }
     numbers.forEach((num) =>
       tempArray.push({ num, isOpen: false }, { num, isOpen: false }),
