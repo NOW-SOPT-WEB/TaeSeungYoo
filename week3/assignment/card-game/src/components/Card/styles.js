@@ -16,6 +16,7 @@ export const CardContainer = styled.div`
   height: 20rem;
   background-image: url(${(props) => props.imgSrc});
   background-size: cover;
+  background-position: center;
   border: 1px solid black;
   cursor: pointer;
 

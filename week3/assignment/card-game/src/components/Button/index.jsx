@@ -5,7 +5,7 @@ const Button = ({
   label,
   variant = "primary",
   size = "medium",
-  onClick = () => {},
+  onClick,
   className = "",
   customStyle = css``,
   ...props
