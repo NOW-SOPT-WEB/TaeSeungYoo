@@ -11,32 +11,28 @@ const useCard = () => {
   const handleChangeLevel = (event) => {
     const label = event.target.textContent.toLowerCase();
     if (label === level) return;
+
     setLevel(label);
-    initCardArray(label);
+    setCardArray(getRandomCardArray(label));
   };
 
-  const getRandomCardArray = (num) => {
+  const getRandomCardArray = (label) => {
     let tempArray = [];
-    for (let i = 1; i <= num; i++) {
-      tempArray.push(i, i);
-    }
-    tempArray.sort(() => Math.random() - 0.5);
-
-    return tempArray;
-  };
-
-  const initCardArray = (label) => {
     let cardNum = 7;
     if (label === "easy") {
       cardNum = 5;
     } else if (label === "hard") {
       cardNum = 9;
     }
-    setCardArray(getRandomCardArray(cardNum));
+    for (let i = 1; i <= cardNum; i++) {
+      tempArray.push(i, i);
+    }
+    tempArray.sort(() => Math.random() - 0.5);
+    return tempArray;
   };
 
   useEffect(() => {
-    setCardArray(getRandomCardArray(7));
+    setCardArray(getRandomCardArray("normal"));
   }, []);
 
   return { level, cardArray, handleChangeLevel, handleClickReset };

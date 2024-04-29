@@ -12,11 +12,16 @@ export const BoardContainer = styled.section`
     padding: 2rem;
     ${Generators.flexGenerator("row", "space-between", "center")};
 
-    & > .board__score {
-      font-size: 2.4rem;
+    & > .board__score-section {
+      ${Generators.flexGenerator()};
+      gap: 1rem;
+
+      & > .board__score {
+        font-size: 2.4rem;
+      }
     }
 
-    & > .board__level-buttons {
+    & > .board__level-section {
       ${Generators.flexGenerator("row", "space-between", "center")};
       gap: 1rem;
     }

@@ -5,16 +5,23 @@ import { useCard } from "@hooks";
 import { cardImages } from "@img/card/index.js";
 
 const Board = () => {
-  const { level, cardArray, handleChangeLevel } = useCard();
+  const { level, cardArray, handleChangeLevel, handleClickReset } = useCard();
   return (
     <BoardContainer>
       <header className="board__header">
-        <div className="board__score">Score: 0 / 5</div>
-        <div className="board__level-buttons">
+        <section className={"board__score-section"}>
+          <div className="board__score">Score: 0 / 5</div>
+          <Button
+            className={"header__reset-btn"}
+            label={"다시하기"}
+            onClick={handleClickReset}
+          />
+        </section>
+        <section className="board__level-section">
           <Button label={"Easy"} onClick={handleChangeLevel} />
           <Button label={"Normal"} onClick={handleChangeLevel} />
           <Button label={"Hard"} onClick={handleChangeLevel} />
-        </div>
+        </section>
       </header>
       <section className="board__cards">
         {cardArray.map((num, index) => {
