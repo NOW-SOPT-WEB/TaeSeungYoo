@@ -19,6 +19,7 @@ export const CardContainer = styled.div`
   background-position: center;
   border: 1px solid black;
   cursor: pointer;
+  border-radius: 2rem;
 
   ${(props) => props.size && CardSizes[props.size]}
 

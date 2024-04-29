@@ -7,8 +7,10 @@ import cardImg6 from "@img/card/card6.png";
 import cardImg7 from "@img/card/card7.png";
 import cardImg8 from "@img/card/card8.png";
 import cardImg9 from "@img/card/card9.png";
+import coverImg from "@img/card/card-cover.jpg";
 
 export const cardImages = {
+  0: coverImg,
   1: cardImg1,
   2: cardImg2,
   3: cardImg3,

@@ -5,7 +5,13 @@ import { useCard } from "@hooks";
 import { cardImages } from "@img/card/index.js";
 
 const Board = () => {
-  const { level, cardArray, handleChangeLevel, handleClickReset } = useCard();
+  const {
+    level,
+    cardArray,
+    handleChangeLevel,
+    handleClickReset,
+    handleClickCard,
+  } = useCard();
   return (
     <BoardContainer>
       <header className="board__header">
@@ -24,9 +30,16 @@ const Board = () => {
         </section>
       </header>
       <section className="board__cards">
-        {cardArray.map((num, index) => {
+        {cardArray.map((card, index) => {
           return (
-            <Card key={`card-${index}`} imgSrc={cardImages[num]} size={level} />
+            <Card
+              key={`card-${index}`}
+              imgSrc={cardImages[card.isOpen ? card.num : 0]}
+              size={level}
+              onClick={() => {
+                handleClickCard(index);
+              }}
+            />
           );
         })}
       </section>
