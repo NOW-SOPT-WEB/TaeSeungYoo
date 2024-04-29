@@ -33,5 +33,28 @@ export const BoardContainer = styled.section`
     gap: 1rem;
     ${Generators.flexGenerator("row", "flex-start", "center")};
     flex-wrap: wrap;
+
+    & > .card__wrapper {
+      position: relative;
+      transition: transform 0.5s ease-in;
+
+      & > .card__cover {
+        position: absolute;
+        transition: visibility 0.3s ease-in;
+        z-index: 1;
+      }
+
+      & > .card__img {
+        transform: rotateY(180deg);
+      }
+    }
+
+    & > .card--open {
+      transform: rotateY(-180deg);
+
+      & > .card__cover {
+        visibility: hidden;
+      }
+    }
   }
 `;

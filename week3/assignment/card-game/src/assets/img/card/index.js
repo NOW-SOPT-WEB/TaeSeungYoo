@@ -7,6 +7,12 @@ import cardImg6 from "@img/card/card6.png";
 import cardImg7 from "@img/card/card7.png";
 import cardImg8 from "@img/card/card8.png";
 import cardImg9 from "@img/card/card9.png";
+import cardImg10 from "@img/card/card10.png";
+import cardImg11 from "@img/card/card11.png";
+import cardImg12 from "@img/card/card12.png";
+import cardImg13 from "@img/card/card13.png";
+import cardImg14 from "@img/card/card14.png";
+import cardImg15 from "@img/card/card15.png";
 import coverImg from "@img/card/card-cover.jpg";
 
 export const cardImages = {
@@ -20,4 +26,10 @@ export const cardImages = {
   7: cardImg7,
   8: cardImg8,
   9: cardImg9,
+  10: cardImg10,
+  11: cardImg11,
+  12: cardImg12,
+  13: cardImg13,
+  14: cardImg14,
+  15: cardImg15,
 };

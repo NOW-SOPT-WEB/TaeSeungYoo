@@ -2,10 +2,16 @@ import { useEffect, useState } from "react";
 
 const useCard = () => {
   const [level, setLevel] = useState("normal"); // easy, normal, hard
-  const [cardArray, setCardArray] = useState([]);
+  const [cardArray, setCardArray] = useState([]); // {num, isOpen}
+  const [firstCard, setFirstCard] = useState({});
+  const [secondCard, setSecondCard] = useState({});
+  const [score, setScore] = useState(0);
+
+  const [checkingCard, setCheckingCard] = useState(false);
 
   const handleClickReset = () => {
     setCardArray(getRandomCardArray(level));
+    setScore(0);
   };
 
   const handleChangeLevel = (event) => {
@@ -13,6 +19,7 @@ const useCard = () => {
     if (label === level) return;
 
     setLevel(label);
+    setScore(0);
     setCardArray(getRandomCardArray(label));
   };
 
@@ -24,30 +31,89 @@ const useCard = () => {
     } else if (label === "hard") {
       cardNum = 9;
     }
-    for (let i = 1; i <= cardNum; i++) {
-      tempArray.push({ num: i, isOpen: false }, { num: i, isOpen: false });
+    const numbers = new Set();
+
+    while (numbers.size < cardNum) {
+      numbers.add(Math.floor(Math.random() * 15) + 1);
     }
+    numbers.forEach((num) =>
+      tempArray.push({ num, isOpen: false }, { num, isOpen: false }),
+    );
     tempArray.sort(() => Math.random() - 0.5);
     return tempArray;
   };
 
   const handleClickCard = (index) => {
+    const { num, isOpen } = cardArray[index];
+    if (isOpen || checkingCard) return; // 뒤집은 카드를 클릭으로 다시 뒤집는 경우는 없음
+
     const newCardArray = cardArray.map((card, i) => {
       if (i === index) {
-        return { ...card, isOpen: !card.isOpen }; // 클릭된 카드의 isOpen 값을 반전
+        return { ...card, isOpen: !card.isOpen };
       }
       return card;
     });
     setCardArray(newCardArray);
+
+    if (Object.keys(firstCard).length === 0) {
+      setFirstCard({ index, num });
+    } else {
+      setCheckingCard(true);
+      setSecondCard({ index, num });
+    }
   };
 
   useEffect(() => {
     setCardArray(getRandomCardArray("normal"));
   }, []);
 
+  useEffect(() => {
+    if (checkingCard) {
+      // 맞음
+      if (firstCard.num === secondCard.num) {
+        setScore((prevState) => prevState + 1);
+        setFirstCard({});
+        setSecondCard({});
+        setCheckingCard(false);
+        // 틀림
+      } else {
+        setTimeout(() => {
+          const newCardArray = cardArray.map((card, i) => {
+            if (i === firstCard.index || i === secondCard.index) {
+              return { ...card, isOpen: false };
+            }
+            return card;
+          });
+          setCardArray(newCardArray);
+          setFirstCard({});
+          setSecondCard({});
+          setCheckingCard(false);
+        }, 1000);
+      }
+    }
+  }, [
+    cardArray,
+    checkingCard,
+    firstCard.index,
+    firstCard.num,
+    secondCard.index,
+    secondCard.num,
+  ]);
+
+  useEffect(() => {
+    const goal = level === "easy" ? 5 : level === "normal" ? 7 : 9;
+    if (score === goal) {
+      setTimeout(() => {
+        alert("게임 종료");
+        handleClickReset();
+      }, 500);
+    }
+  }, [score, level]);
+
   return {
     level,
     cardArray,
+    score,
     handleChangeLevel,
     handleClickReset,
     handleClickCard,

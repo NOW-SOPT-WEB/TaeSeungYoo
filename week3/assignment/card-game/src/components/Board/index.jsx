@@ -8,6 +8,7 @@ const Board = () => {
   const {
     level,
     cardArray,
+    score,
     handleChangeLevel,
     handleClickReset,
     handleClickCard,
@@ -16,7 +17,7 @@ const Board = () => {
     <BoardContainer>
       <header className="board__header">
         <section className={"board__score-section"}>
-          <div className="board__score">Score: 0 / 5</div>
+          <div className="board__score">{`Score: ${score} / ${cardArray.length / 2}`}</div>
           <Button
             className={"header__reset-btn"}
             label={"다시하기"}
@@ -32,14 +33,28 @@ const Board = () => {
       <section className="board__cards">
         {cardArray.map((card, index) => {
           return (
-            <Card
+            <div
               key={`card-${index}`}
-              imgSrc={cardImages[card.isOpen ? card.num : 0]}
-              size={level}
-              onClick={() => {
-                handleClickCard(index);
-              }}
-            />
+              className={
+                cardArray[index].isOpen
+                  ? "card__wrapper card--open"
+                  : "card__wrapper card--close"
+              }
+            >
+              <Card
+                className={"card__cover"}
+                imgSrc={cardImages[0]}
+                size={level}
+                onClick={() => {
+                  handleClickCard(index);
+                }}
+              />
+              <Card
+                className={"card__img"}
+                imgSrc={cardImages[card.num]}
+                size={level}
+              />
+            </div>
           );
         })}
       </section>
