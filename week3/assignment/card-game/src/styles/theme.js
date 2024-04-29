@@ -1,10 +1,9 @@
 export const theme = {
   colors: {
-    primary01: "#39B46AFF",
-    primary02: "#39B46ACC",
-    primary03: "#39B46A99",
-    primary04: "#39B46A66",
-    primary05: "#39B46A33",
+    primary01: "#27374D",
+    primary02: "#526D82",
+    primary03: "#9DB2BF",
+    primary04: "#DDE6ED",
 
     black: "#000000",
     silver: "#C0C0C0",
