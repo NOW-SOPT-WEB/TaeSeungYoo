@@ -42,7 +42,6 @@ export const BoardContainer = styled.section`
         position: absolute;
         transition: visibility 0.3s ease-in;
         z-index: 1;
-        display: none;
       }
 
       & > .card__img {
