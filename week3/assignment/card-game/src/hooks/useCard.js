@@ -9,24 +9,6 @@ const useCard = ({ modalRef }) => {
 
   const [checkingCard, setCheckingCard] = useState(false);
 
-  const handleClickReset = () => {
-    setCardArray(getRandomCardArray(level));
-    setFirstCard({});
-    setSecondCard({});
-    setScore(0);
-  };
-
-  const handleChangeLevel = (event) => {
-    const label = event.target.textContent.toLowerCase();
-    if (label === level) return;
-
-    setLevel(label);
-    setScore(0);
-    setFirstCard({});
-    setSecondCard({});
-    setCardArray(getRandomCardArray(label));
-  };
-
   const getRandomCardArray = (label) => {
     let tempArray = [];
     let cardNum = 7;
@@ -45,6 +27,24 @@ const useCard = ({ modalRef }) => {
     );
     tempArray.sort(() => Math.random() - 0.5);
     return tempArray;
+  };
+
+  const handleReset = (curLevel = level) => {
+    setFirstCard({});
+    setSecondCard({});
+    setScore(0);
+    setCardArray(getRandomCardArray(curLevel));
+  };
+  const handleClickModalClose = () => {
+    modalRef.current.close();
+    handleReset();
+  };
+
+  const handleChangeLevel = (event) => {
+    const label = event.target.textContent.toLowerCase();
+    if (label === level) return;
+    setLevel(label);
+    handleReset(label);
   };
 
   const handleClickCard = (index) => {
@@ -117,8 +117,9 @@ const useCard = ({ modalRef }) => {
     level,
     cardArray,
     score,
+    handleClickModalClose,
     handleChangeLevel,
-    handleClickReset,
+    handleReset,
     handleClickCard,
   };
 };

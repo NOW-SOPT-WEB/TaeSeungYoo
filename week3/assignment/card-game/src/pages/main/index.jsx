@@ -11,19 +11,20 @@ const Main = () => {
     level,
     cardArray,
     score,
+    handleClickModalClose,
     handleChangeLevel,
-    handleClickReset,
+    handleReset,
     handleClickCard,
   } = useCard({ modalRef });
   return (
     <MainContainer>
-      <Modal modalRef={modalRef} controller={{ handleClickReset }} />
+      <Modal modalRef={modalRef} controller={{ handleClickModalClose }} />
       <Header
         params={{
           cardArray,
           score,
         }}
-        controller={{ handleClickReset }}
+        controller={{ handleReset }}
       />
       <Board
         params={{ level, cardArray }}

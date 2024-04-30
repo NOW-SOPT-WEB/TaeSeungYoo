@@ -3,7 +3,7 @@ import Button from "@components/Button/index.jsx";
 
 const Header = ({ params, controller }) => {
   const { score, cardArray } = params;
-  const { handleClickReset } = controller;
+  const { handleReset } = controller;
   return (
     <HeaderContainer>
       <div></div>
@@ -15,7 +15,7 @@ const Header = ({ params, controller }) => {
         <Button
           className={"header__reset-btn"}
           label={"다시하기"}
-          onClick={handleClickReset}
+          onClick={() => handleReset()}
         />
       </section>
     </HeaderContainer>

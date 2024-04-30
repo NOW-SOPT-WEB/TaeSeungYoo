@@ -2,15 +2,14 @@ import { ModalContainer } from "./styles";
 import Button from "@components/Button/index.jsx";
 
 const Modal = ({ modalRef, controller }) => {
-  const { handleClickReset } = controller;
+  const { handleClickModalClose } = controller;
 
   return (
     <ModalContainer
       ref={modalRef}
       onClick={(event) => {
         if (event.target.nodeName === "DIALOG") {
-          modalRef.current.close();
-          handleClickReset();
+          handleClickModalClose();
         }
       }}
     >
@@ -19,10 +18,7 @@ const Modal = ({ modalRef, controller }) => {
         <Button
           className="modal__button"
           label={"메인으로 돌아가기"}
-          onClick={() => {
-            modalRef.current.close();
-            handleClickReset();
-          }}
+          onClick={handleClickModalClose}
         />
       </div>
     </ModalContainer>
