@@ -30,7 +30,7 @@ const GlobalStyle = css`
   html,
   body {
     font-size: 62.5%;
-    background-color: #dde6ed; // primary04
+    //background-color: #dde6ed; // primary04
   }
 
   html {

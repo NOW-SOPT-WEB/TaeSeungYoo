@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useCard = () => {
+const useCard = ({ modalRef }) => {
   const [level, setLevel] = useState("normal"); // easy, normal, hard
   const [cardArray, setCardArray] = useState([]); // {num, isOpen}
   const [firstCard, setFirstCard] = useState({});
@@ -11,6 +11,8 @@ const useCard = () => {
 
   const handleClickReset = () => {
     setCardArray(getRandomCardArray(level));
+    setFirstCard({});
+    setSecondCard({});
     setScore(0);
   };
 
@@ -20,6 +22,8 @@ const useCard = () => {
 
     setLevel(label);
     setScore(0);
+    setFirstCard({});
+    setSecondCard({});
     setCardArray(getRandomCardArray(label));
   };
 
@@ -104,8 +108,7 @@ const useCard = () => {
     const goal = level === "easy" ? 5 : level === "normal" ? 7 : 9;
     if (score === goal) {
       setTimeout(() => {
-        alert("게임 종료");
-        handleClickReset();
+        modalRef.current.showModal();
       }, 500);
     }
   }, [score, level]);
