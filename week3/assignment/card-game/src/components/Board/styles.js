@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Generators } from "@styles";
 
 export const BoardContainer = styled.section`
-  padding-top: 10rem;
+  padding-top: 12rem;
 
   width: 100%;
   ${Generators.flexGenerator("column", "flex-start", "center")};
@@ -10,21 +10,8 @@ export const BoardContainer = styled.section`
   & > .board__header {
     width: 100%;
     padding: 2rem;
-    ${Generators.flexGenerator("row", "space-between", "center")};
-
-    & > .board__score-section {
-      ${Generators.flexGenerator()};
-      gap: 1rem;
-
-      & > .board__score {
-        font-size: 2.4rem;
-      }
-    }
-
-    & > .board__level-section {
-      ${Generators.flexGenerator("row", "space-between", "center")};
-      gap: 1rem;
-    }
+    ${Generators.flexGenerator("row", "flex-start", "center")};
+    gap: 1.5rem;
   }
 
   & > .board__cards {
