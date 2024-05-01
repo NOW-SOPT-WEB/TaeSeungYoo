@@ -24,6 +24,7 @@ const Board = ({ params, controller }) => {
                   : "card__wrapper card--close"
               }
             >
+              {/*카드 뒷면(커버)*/}
               <Card
                 className={"card__cover"}
                 imgSrc={cardImages[0]}
@@ -32,6 +33,7 @@ const Board = ({ params, controller }) => {
                   handleClickCard(index);
                 }}
               />
+              {/*카드 앞면(그림)*/}
               <Card
                 className={"card__img"}
                 imgSrc={cardImages[card.num]}
