@@ -20,10 +20,12 @@ export const BoardContainer = styled.section`
     gap: 1rem;
     ${Generators.flexGenerator("row", "flex-start", "center")};
     flex-wrap: wrap;
+    perspective: 1100px;
 
     & > .card__wrapper {
       position: relative;
       transition: transform 0.5s ease-in;
+      transform-style: preserve-3d;
 
       & > .card__cover {
         position: absolute;

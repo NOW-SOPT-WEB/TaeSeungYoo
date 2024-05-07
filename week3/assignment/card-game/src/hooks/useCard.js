@@ -20,11 +20,15 @@ const useCard = ({ modalRef }) => {
     let tempArray = [];
     // 난이도에 따라 카드 수가 조정
     let cardNum = 7;
-    if (label === "easy") {
-      cardNum = 5;
-    } else if (label === "hard") {
-      cardNum = 9;
+    switch (label) {
+      case "easy":
+        cardNum = 5;
+        break;
+      case "hard":
+        cardNum = 9;
+        break;
     }
+
     // Set은 중복을 제거함. 따라서 nCr과 같이 동작함
     const numbers = new Set();
     while (numbers.size < cardNum) {
