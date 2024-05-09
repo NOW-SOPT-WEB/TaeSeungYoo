@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 import Reset from './reset';
 
-const GlobalStyle = css`
+export const GlobalStyle = css`
   ${Reset}
   * {
     font-family:
@@ -27,5 +27,3 @@ const GlobalStyle = css`
     font-size: 62.5%;
   }
 `;
-
-export default GlobalStyle;
