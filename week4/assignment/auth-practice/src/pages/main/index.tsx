@@ -1,7 +1,7 @@
 import { MainContainer } from './styles';
 
-const index = () => {
+const Index = () => {
   return <MainContainer>main</MainContainer>;
 };
 
-export default index;
+export default Index;

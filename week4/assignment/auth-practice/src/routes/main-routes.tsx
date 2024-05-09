@@ -1,5 +1,5 @@
 import Main from '@pages/main';
-import { RouteType } from '@typings/routes/routeType.ts';
+import { RouteType } from '@typings/routeType';
 
 export const mainRoutes: RouteType[] = [
   {

@@ -1,7 +1,7 @@
 import { MyPageContainer } from './styles';
 
-const index = () => {
+const Index = () => {
   return <MyPageContainer>my-page</MyPageContainer>;
 };
 
-export default index;
+export default Index;

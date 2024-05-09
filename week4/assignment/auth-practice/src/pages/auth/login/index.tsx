@@ -2,7 +2,7 @@ import loginImg from '@img/login-img.png';
 
 import { LoginContainer } from './styles';
 
-const index = () => {
+const Index = () => {
   return (
     <LoginContainer>
       <h1 className="login__title">로그인</h1>
@@ -21,4 +21,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

@@ -1,5 +1,5 @@
 import MyPage from '@pages/user/my-page';
-import { RouteType } from '@typings/routes/routeType.ts';
+import { RouteType } from '@typings/routeType';
 
 export const userRoutes: RouteType[] = [
   {
