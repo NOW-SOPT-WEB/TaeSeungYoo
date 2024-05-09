@@ -13,7 +13,7 @@ const Index = () => {
         <track kind="captions" srcLang="ko" label="Korean" />
       </video>
       <section className="join__button">
-        <button type="button" onClick={() => navigate('/user/my-profile')}>
+        <button type="button" onClick={() => navigate('/user/my-page')}>
           내 정보
         </button>
         <button type="button" onClick={() => navigate('/auth/join')}>
