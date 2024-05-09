@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 
 export interface InputFormProps {
   title: string;
@@ -6,6 +6,7 @@ export interface InputFormProps {
   placeholder?: string;
   value?: string;
   infoText?: string;
-  onChange?: () => void;
+  // eslint-disable-next-line no-unused-vars
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
 }

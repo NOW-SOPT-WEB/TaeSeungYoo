@@ -29,7 +29,7 @@
       "@styles": ["src/styles"],
       "@typings/*": ["src/typings/*"],
       "@util": ["src/common/util/index"],
-      "@api/*": ["src/common/api/*"]
+      "@apis/*": ["src/apis/*"]
     }
   },
   "include": ["src"],
