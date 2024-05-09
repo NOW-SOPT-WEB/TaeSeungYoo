@@ -26,12 +26,17 @@ export const JoinContainer = styled.div`
     & > button {
       width: 100%;
       height: 3rem;
-      background-color: ${Colors.Blue};
+      background-color: ${Colors.Primary01};
       color: ${Colors.White};
-      border: none;
+      border: 0.1rem solid ${Colors.LightGray};
       border-radius: 1rem;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+
+    & > button:last-of-type {
+      background-color: ${Colors.White};
+      color: ${Colors.Black};
     }
   }
 `;

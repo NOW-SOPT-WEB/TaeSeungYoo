@@ -1,9 +1,9 @@
 export const Colors = {
-  Primary01: '#39B46A',
-  Primary02: '#39B46A',
-  Primary03: '#39B46A',
-  Primary04: '#39B46A',
-  Primary05: '#39B46A',
+  Primary01: '#39B46AFF',
+  Primary02: '#39B46ACC',
+  Primary03: '#39B46A99',
+  Primary04: '#39B46A66',
+  Primary05: '#39B46A33',
   GrayGreen: '#759D85',
 
   Black: '#000000',

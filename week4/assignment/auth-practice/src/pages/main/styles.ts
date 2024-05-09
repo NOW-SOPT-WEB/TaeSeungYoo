@@ -1,4 +1,22 @@
 import styled from '@emotion/styled';
 import { Generators, Colors } from '@styles';
 
-export const MainContainer = styled.div``;
+export const MainContainer = styled.div`
+  & > .join__button {
+    width: 30rem;
+    ${Generators.flexGenerator()};
+    gap: 1rem;
+    margin-top: 2rem;
+
+    & > button {
+      width: 100%;
+      height: 3rem;
+      background-color: ${Colors.Primary01};
+      color: ${Colors.White};
+      border: none;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+`;

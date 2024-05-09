@@ -11,12 +11,13 @@ export const LoginContainer = styled.div`
   }
 
   & > .login__img {
-    width: 100px;
-    height: 100px;
+    width: 10rem;
+    height: 10rem;
     margin-top: 2rem;
   }
 
   & > .login__input {
+    width: 30rem;
     & > h3 {
       font-size: 1.5rem;
       margin-top: 2rem;
@@ -32,7 +33,10 @@ export const LoginContainer = styled.div`
   }
 
   & > .login__button {
+    width: 30rem;
     margin-top: 2rem;
+    ${Generators.flexGenerator()};
+    gap: 1rem;
 
     & > button {
       width: 100%;
@@ -40,14 +44,16 @@ export const LoginContainer = styled.div`
       font-size: 1.5rem;
       margin-top: 1rem;
       padding: 0.5rem;
-      background-color: ${Colors.Blue};
-      color: ${Colors.White};
-      border: none;
+      background-color: ${Colors.White};
+      color: ${Colors.Black};
+      border: 0.1rem solid ${Colors.LightGray};
+      border-radius: 1rem;
       cursor: pointer;
     }
 
     & > button:last-of-type {
-      background-color: ${Colors.Gray};
+      background-color: ${Colors.Primary01};
+      color: ${Colors.White};
     }
   }
 `;

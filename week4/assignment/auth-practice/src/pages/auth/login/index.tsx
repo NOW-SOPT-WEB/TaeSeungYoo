@@ -1,4 +1,4 @@
-import loginImg from '@img/login-img.png';
+import loginImg from '@assets/img/login-logo.png';
 
 import { LoginContainer } from './styles';
 
