@@ -17,6 +17,12 @@ export const InputFormContainer = styled.div`
     border-radius: 1rem;
   }
 
+  &.error {
+    & > input {
+      border: 1px solid ${Colors.Red};
+    }
+  }
+
   & > p {
     font-size: 0.875rem;
     color: ${Colors.Blue};

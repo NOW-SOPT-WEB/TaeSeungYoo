@@ -1,4 +1,5 @@
 import MainVideo from '@assets/video/main-video.mp4';
+import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { MainContainer } from './styles';
@@ -6,6 +7,11 @@ import { MainContainer } from './styles';
 const Index = () => {
   const navigate = useNavigate();
   const { memberId } = useParams();
+  useEffect(() => {
+    if (!memberId) {
+      navigate('/auth/login');
+    }
+  }, []);
   return (
     <MainContainer>
       <h1>메인 페이지</h1>

@@ -28,7 +28,7 @@
       "@components/*": ["src/components/*"],
       "@styles": ["src/styles"],
       "@typings/*": ["src/typings/*"],
-      "@util": ["src/common/util/index"],
+      "@utils/*": ["src/utils/*"],
       "@apis/*": ["src/apis/*"]
     }
   },
