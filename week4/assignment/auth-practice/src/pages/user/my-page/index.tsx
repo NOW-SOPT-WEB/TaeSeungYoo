@@ -1,4 +1,5 @@
 import { getInfo, patchPassword } from '@apis/member';
+import { validatePassword } from '@utils/utils';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -89,6 +90,10 @@ const Index = () => {
               onClick={async () => {
                 if (!previousPassword || !newPassword || !newPasswordVerification) {
                   alert('모든 항목을 입력해주세요.');
+                  return;
+                }
+                if (!validatePassword(newPassword)) {
+                  alert('비밀번호 형식이 맞지 않습니다.');
                   return;
                 }
                 const response = await patchPassword(

@@ -141,7 +141,7 @@ const Index = () => {
             const response = await postJoin({ authenticationId: id, password, nickname, phone: phoneNumber });
             const { code, message } = response && response.data;
 
-            if (code === 200) {
+            if (code === 201) {
               alert('회원가입이 완료되었습니다.');
               navigate('/auth/login');
             } else {
