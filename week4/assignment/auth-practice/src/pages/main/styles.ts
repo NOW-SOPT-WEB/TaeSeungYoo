@@ -2,6 +2,16 @@ import styled from '@emotion/styled';
 import { Generators, Colors } from '@styles';
 
 export const MainContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  ${Generators.flexGenerator('column')};
+  padding: 3rem;
+
+  & > h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
   & > .join__button {
     width: 30rem;
     ${Generators.flexGenerator()};

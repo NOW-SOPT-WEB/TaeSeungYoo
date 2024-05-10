@@ -1,11 +1,15 @@
-import { patchPassword } from '@apis/member';
-import React, { useState } from 'react';
+import { getInfo, patchPassword } from '@apis/member';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { MyPageContainer } from './styles';
 
 const Index = () => {
   const navigate = useNavigate();
+  const [id, setId] = useState();
+  const [nickname, setNickname] = useState();
+  const [phone, setPhone] = useState();
+
   const [isOpenChangePassword, setIsOpenChangePassword] = useState(false);
 
   const [previousPassword, setPreviousPassword] = useState('');
@@ -22,21 +26,41 @@ const Index = () => {
     setNewPasswordVerification(e.target.value);
   };
 
+  // getInfo fun
+  const fetchInfo = async (id: number) => {
+    try {
+      const response = await getInfo(id);
+      const { data } = response.data;
+      const { authenticationId, nickname, phone } = data;
+      setId(authenticationId);
+      setNickname(nickname);
+      setPhone(phone);
+
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchInfo(788);
+  }, []);
+
   return (
     <MyPageContainer>
       <h1>마이페이지</h1>
       <section className="my-page__info">
         <div className="info__item">
           <div>아이디</div>
-          <div>test</div>
+          <div>{id}</div>
         </div>
         <div className="info__item">
           <div>닉네임</div>
-          <div>test</div>
+          <div>{nickname}</div>
         </div>
         <div className="info__item">
           <div>전화번호</div>
-          <div>010-1234-5678</div>
+          <div>{phone}</div>
         </div>
       </section>
       <section className="my-page__change-password">
