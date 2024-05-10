@@ -18,17 +18,11 @@ export const LoginContainer = styled.div`
 
   & > .login__input {
     width: 30rem;
-    & > h3 {
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
+    ${Generators.flexGenerator('column')}
+    gap: 2rem;
 
-    & > input {
-      width: 100%;
-      height: 2.5rem;
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      padding: 0.5rem;
+    & .input-form__text {
+      color: ${Colors.Red};
     }
   }
 

@@ -86,15 +86,22 @@ const Index = () => {
             />
             <button
               type="button"
-              onClick={() => {
-                patchPassword(
-                  {
-                    previousPassword,
-                    newPassword,
-                    newPasswordVerification,
-                  },
+              onClick={async () => {
+                if (!previousPassword || !newPassword || !newPasswordVerification) {
+                  alert('모든 항목을 입력해주세요.');
+                  return;
+                }
+                const response = await patchPassword(
+                  { previousPassword, newPassword, newPasswordVerification },
                   memberIdNumber
                 );
+
+                const { code, message } = response && response.data;
+                if (code === 200) {
+                  alert('비밀번호가 성공적으로 변경되었습니다.');
+                } else {
+                  alert(message);
+                }
               }}>
               비밀번호 변경
             </button>

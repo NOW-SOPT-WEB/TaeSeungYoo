@@ -9,7 +9,9 @@ import { LoginContainer } from './styles';
 const Index = () => {
   const navigate = useNavigate();
   const [id, setId] = useState('');
+  const [idInfoText, setIdInfoText] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordInfoText, setPasswordInfoText] = useState('');
 
   const handleChangeId = (e: React.ChangeEvent<HTMLInputElement>) => {
     setId(e.target.value);
@@ -29,6 +31,7 @@ const Index = () => {
           placeholder="아이디를 입력해주세요."
           value={id}
           onChange={handleChangeId}
+          infoText={idInfoText ?? ''}
         />
         <InputForm
           type="password"
@@ -36,12 +39,23 @@ const Index = () => {
           value={password}
           onChange={handleChangePassword}
           placeholder="비밀번호를 입력해주세요."
+          infoText={passwordInfoText ?? ''}
         />
       </section>
       <section className="login__button">
         <button
           type="button"
           onClick={async () => {
+            setIdInfoText('');
+            setPasswordInfoText('');
+            if (!id) {
+              setIdInfoText('아이디를 입력해주세요.');
+              return;
+            }
+            if (!password) {
+              setPasswordInfoText('비밀번호를 입력해주세요.');
+              return;
+            }
             const response = await postLogin({ authenticationId: id, password });
             const { code, message } = response && response.data;
 
