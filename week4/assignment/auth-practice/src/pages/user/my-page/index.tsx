@@ -1,11 +1,14 @@
 import { getInfo, patchPassword } from '@apis/member';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { MyPageContainer } from './styles';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { memberId } = useParams();
+  const memberIdNumber = Number(memberId);
+
   const [id, setId] = useState();
   const [nickname, setNickname] = useState();
   const [phone, setPhone] = useState();
@@ -35,15 +38,13 @@ const Index = () => {
       setId(authenticationId);
       setNickname(nickname);
       setPhone(phone);
-
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    fetchInfo(788);
+    fetchInfo(memberIdNumber);
   }, []);
 
   return (
@@ -92,7 +93,7 @@ const Index = () => {
                     newPassword,
                     newPasswordVerification,
                   },
-                  788
+                  memberIdNumber
                 );
               }}>
               비밀번호 변경
@@ -101,7 +102,7 @@ const Index = () => {
         )}
       </section>
       <section className="my-page__button">
-        <button type="button" onClick={() => navigate('/')}>
+        <button type="button" onClick={() => navigate(`/${memberIdNumber}`)}>
           홈으로
         </button>
       </section>

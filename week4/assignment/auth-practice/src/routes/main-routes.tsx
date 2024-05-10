@@ -3,7 +3,7 @@ import { RouteType } from '@typings/routeType';
 
 export const mainRoutes: RouteType[] = [
   {
-    path: '/',
+    path: '/:memberId',
     element: <Main />,
   },
 ];

@@ -1,10 +1,11 @@
 import MainVideo from '@assets/video/main-video.mp4';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { MainContainer } from './styles';
 
 const Index = () => {
   const navigate = useNavigate();
+  const { memberId } = useParams();
   return (
     <MainContainer>
       <h1>메인 페이지</h1>
@@ -13,7 +14,7 @@ const Index = () => {
         <track kind="captions" srcLang="ko" label="Korean" />
       </video>
       <section className="join__button">
-        <button type="button" onClick={() => navigate('/user/my-page')}>
+        <button type="button" onClick={() => navigate(`/user/my-page/${memberId}`)}>
           내 정보
         </button>
         <button type="button" onClick={() => navigate('/auth/join')}>

@@ -3,7 +3,7 @@ import { RouteType } from '@typings/routeType';
 
 export const userRoutes: RouteType[] = [
   {
-    path: '/user/my-page',
+    path: '/user/my-page/:memberId',
     element: <MyPage />,
   },
 ];

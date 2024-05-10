@@ -63,8 +63,16 @@ const Index = () => {
       <section className="join__button">
         <button
           type="button"
-          onClick={() => {
-            postJoin({ authenticationId: id, password, nickname, phone: phoneNumber });
+          onClick={async () => {
+            const response = await postJoin({ authenticationId: id, password, nickname, phone: phoneNumber });
+            const { code, message } = response && response.data;
+
+            if (code === 200) {
+              alert('회원가입이 완료되었습니다.');
+              navigate('/auth/login');
+            } else {
+              alert(message);
+            }
           }}>
           회원가입
         </button>

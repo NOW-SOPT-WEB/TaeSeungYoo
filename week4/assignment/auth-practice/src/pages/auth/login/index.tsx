@@ -41,11 +41,18 @@ const Index = () => {
       <section className="login__button">
         <button
           type="button"
-          onClick={() => {
-            postLogin({
-              authenticationId: id,
-              password,
-            });
+          onClick={async () => {
+            const response = await postLogin({ authenticationId: id, password });
+            const { code, message } = response && response.data;
+
+            if (code === 200) {
+              const memberId = response && response.headers.location;
+
+              alert('로그인 성공');
+              navigate(`/${memberId}`);
+            } else {
+              alert(message);
+            }
           }}>
           로그인
         </button>
