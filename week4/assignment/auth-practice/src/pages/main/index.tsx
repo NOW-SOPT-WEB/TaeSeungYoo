@@ -1,17 +1,10 @@
 import MainVideo from '@assets/video/main-video.mp4';
-import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useMain } from '@hooks';
 
 import { MainContainer } from './styles';
 
 const Index = () => {
-  const navigate = useNavigate();
-  const { memberId } = useParams();
-  useEffect(() => {
-    if (!memberId) {
-      navigate('/auth/login');
-    }
-  }, []);
+  const { handleClickMyPage, handleClickJoin } = useMain();
   return (
     <MainContainer>
       <h1>메인 페이지</h1>
@@ -20,10 +13,10 @@ const Index = () => {
         <track kind="captions" srcLang="ko" label="Korean" />
       </video>
       <section className="join__button">
-        <button type="button" onClick={() => navigate(`/user/my-page/${memberId}`)}>
+        <button type="button" onClick={handleClickMyPage}>
           내 정보
         </button>
-        <button type="button" onClick={() => navigate('/auth/join')}>
+        <button type="button" onClick={handleClickJoin}>
           회원가입
         </button>
       </section>

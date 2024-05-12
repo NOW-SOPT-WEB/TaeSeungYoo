@@ -1,24 +1,20 @@
-import { postLogin } from '@apis/member';
 import loginImg from '@assets/img/login-logo.png';
 import InputForm from '@components/inputForm';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLogin } from '@hooks';
 
 import { LoginContainer } from './styles';
 
 const Index = () => {
-  const navigate = useNavigate();
-  const [id, setId] = useState('');
-  const [idInfoText, setIdInfoText] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordInfoText, setPasswordInfoText] = useState('');
-
-  const handleChangeId = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setId(e.target.value);
-  };
-  const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
+  const {
+    id,
+    idInfoText,
+    password,
+    passwordInfoText,
+    handleChangeId,
+    handleChangePassword,
+    handleClickLogin,
+    handleClickBack,
+  } = useLogin();
 
   return (
     <LoginContainer>
@@ -43,34 +39,10 @@ const Index = () => {
         />
       </section>
       <section className="login__button">
-        <button
-          type="button"
-          onClick={async () => {
-            setIdInfoText('');
-            setPasswordInfoText('');
-            if (!id) {
-              setIdInfoText('아이디를 입력해주세요.');
-              return;
-            }
-            if (!password) {
-              setPasswordInfoText('비밀번호를 입력해주세요.');
-              return;
-            }
-            const response = await postLogin({ authenticationId: id, password });
-            const { code, message } = response && response.data;
-
-            if (code === 200) {
-              const memberId = response && response.headers.location;
-
-              alert('로그인 성공');
-              navigate(`/${memberId}`);
-            } else {
-              alert(message);
-            }
-          }}>
+        <button type="button" onClick={handleClickLogin}>
           로그인
         </button>
-        <button type="button" onClick={() => navigate('/auth/join')}>
+        <button type="button" onClick={handleClickBack}>
           회원가입
         </button>
       </section>
