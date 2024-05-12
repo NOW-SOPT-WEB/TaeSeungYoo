@@ -1,7 +1,6 @@
 import React from 'react';
 
 export interface InputFormProps {
-  useRef?: React.RefObject<HTMLInputElement>;
   title: string;
   type?: string;
   placeholder?: string;

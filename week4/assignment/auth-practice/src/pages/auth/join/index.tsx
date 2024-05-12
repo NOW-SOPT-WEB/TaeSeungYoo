@@ -9,10 +9,10 @@ import { JoinContainer } from './styles';
 const Index = () => {
   const navigate = useNavigate();
 
-  const idRef = useRef();
-  const passwordRef = useRef();
-  const nicknameRef = useRef();
-  const phoneNumberRef = useRef();
+  const idRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const nicknameRef = useRef<HTMLInputElement>(null);
+  const phoneNumberRef = useRef<HTMLInputElement>(null);
 
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
@@ -95,7 +95,7 @@ const Index = () => {
       <h1>회원가입</h1>
       <section className="join__input">
         <InputForm
-          useRef={idRef}
+          ref={idRef}
           type="text"
           title="아이디"
           placeholder="아이디를 입력해주세요."
@@ -104,7 +104,7 @@ const Index = () => {
           error={idError}
         />
         <InputForm
-          useRef={passwordRef}
+          ref={passwordRef}
           type="password"
           title="비밀번호"
           value={password}
@@ -114,7 +114,7 @@ const Index = () => {
           error={passwordError}
         />
         <InputForm
-          useRef={nicknameRef}
+          ref={nicknameRef}
           type="text"
           title="닉네임"
           placeholder="닉네임를 입력해주세요."
@@ -123,7 +123,7 @@ const Index = () => {
           error={nicknameError}
         />
         <InputForm
-          useRef={phoneNumberRef}
+          ref={phoneNumberRef}
           type="text"
           title="전화번호"
           placeholder="전화번호를 입력해주세요."
